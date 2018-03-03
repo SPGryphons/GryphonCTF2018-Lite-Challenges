@@ -1,0 +1,2 @@
+I bet those dummies can't steal my secrets this time since I encrypted it hahaha!
+GCTF{n3v3r_u5e_we4k_p4ssw0rd5}

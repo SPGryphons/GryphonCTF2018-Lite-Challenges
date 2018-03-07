@@ -3,7 +3,7 @@
 void win();
 
 void check() {
-	char buff[71];
+	char buff[20];
 	scanf("%s", buff);
 	printf("Heh, you aren't awesome enuf! Not giving you the flag :)\n");
 }

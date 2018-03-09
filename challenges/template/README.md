@@ -8,6 +8,10 @@ This is another paragraph.
 
 Created by YourNickname (or real name)
 
+## Hints (Optional)
+1. Hint 1
+2. Hint 2
+
 ## Setup Guide
 1. How to
 2. Set up this challenge

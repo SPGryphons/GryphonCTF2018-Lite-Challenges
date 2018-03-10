@@ -7,7 +7,7 @@ void print(int * text, int i) {
 	for (int j = 0; i >= 0; i--, j++) {
 		int cs = text[i];
 		cs -= j + 1;
-		printf("%c", (char)cs);
+		printf("%c", cs);
 	}
 }
 
@@ -17,7 +17,7 @@ void check() {
 	printf("Heh, you aren't awesome enuf! Not giving you the flag :)\n");
 }
 
-void admin() {
+void awesome() {
 	int text[] = {37, -105, 76, 101, 71, 105, 72, 107, 71, 113, 99, 111, 100, 62, 102, 107, 94, 93, 60, 93, 78, -127, 75, 88, 70, 73, 11};
 	print(text, sizeof(text));
 }

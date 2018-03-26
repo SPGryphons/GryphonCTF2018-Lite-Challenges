@@ -1,0 +1,1 @@
+for(;;){var x=prompt("Please enter the flag");"GCTF{an_e4sy_obfusc4ti0n}"===x?alert("Correct!"):alert("Wrong!")}

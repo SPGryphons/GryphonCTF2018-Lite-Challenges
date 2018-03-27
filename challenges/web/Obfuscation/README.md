@@ -6,6 +6,10 @@ I found this website that checks if a flag is valid!
 
 Created by PotatoDrug
 
+## Hints (Optional)
+
+1. https://en.wikipedia.org/wiki/Esoteric_programming_language
+
 ## Setup Guide
 
 Run `./build.sh`

@@ -1,7 +1,6 @@
-~Click Click Click~
  >This is a fairly simple site, whereby the flag is hidden in the cookies.
 (Creator)
-~~~By @WhIteLIght~~~
+By @WhIteLIght
 
 (Question)
 Help, I am so close to finish clicking, but the website reloaded...

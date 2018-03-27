@@ -6,6 +6,10 @@ I was told I can program with anything so I did it with images.
 
 Created by PotatoDrug
 
+## Hints (Optional)
+
+1. https://en.wikipedia.org/wiki/Esoteric_programming_language
+
 ## Setup Guide
 1. Generate base image from http://wallach.netsoc.ie/Piet/textToPiet.html
 2. Decorate the image

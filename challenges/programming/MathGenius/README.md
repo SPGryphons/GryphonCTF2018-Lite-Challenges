@@ -8,7 +8,7 @@ By @WhIteLIght
 Please help me solve this entry questions to Brain Of China.
 
 (Setup Guide)
-~Do `sudo bash build.sh`~
+Do `sudo bash build.sh`
 
 (Hint)
 https://youtu.be/5zexg3wFN70?t=14

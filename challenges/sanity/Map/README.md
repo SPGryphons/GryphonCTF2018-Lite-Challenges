@@ -6,9 +6,6 @@ It may help you in moving around over the next few days
 
 *Creator - Chuan Kai (@exetr)*
 
-## Setup Guide
-1. 
-
 ## Distribution
 1. Distribute contents inside `distrib` folder
 

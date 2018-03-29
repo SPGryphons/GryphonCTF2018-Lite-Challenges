@@ -8,9 +8,6 @@ Eh? Why got border one ah?
 
 *Creator - Chuan Kai (@exetr)*
 
-## Setup Guide
-1.
-
 ## Distribution
 1. Distribute contents inside `distrib` folder
 

@@ -26,7 +26,7 @@ server.on('connection', sock => {
         if (recieved === 'exit') {
             sock.destroy();
         } else {
-            exec('cowsay ' + recieved, (error, stdout, stderr) => {
+            exec('/bin/bash -rc \'cowsay ' + recieved + '\'', (error, stdout, stderr) => {
                 sock.write(stdout + '\n> ');
             });
         }

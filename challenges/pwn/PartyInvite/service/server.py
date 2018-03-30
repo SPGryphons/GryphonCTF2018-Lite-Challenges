@@ -79,7 +79,7 @@ def handler(client):
 
 	mem = [int(i, 16) for i in response[40:43]]
 
-	if [177, 5, 64] == mem and len(response) == 44:
+	if mem == [177, 5, 64] and len(response) == 44:
 		client.send("It seems you got the code right!\n")
 		client.send("\n{:6}PARTY OF THE YEAR INVITATION\n".format("")
 			+ "=" * 40

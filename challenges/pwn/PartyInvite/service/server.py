@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 import socket, threading, os, sys, re
 
-HOST = "localhost"
-PORT = 8091
+HOST = "0.0.0.0"
+PORT = 50000
 SERVERADDR = (HOST, PORT)
 TIMEOUT = 10
 

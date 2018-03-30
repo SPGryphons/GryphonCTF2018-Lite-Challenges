@@ -2,24 +2,16 @@
 
 ## Question Text
 
-Challenge description and how to play (if applicable).
+Optimus Prime is lonely, help him find his friends!
 
-This is another paragraph.
+`nc <server> <port>`
 
 Created by PotatoDrug
-
-## Hints (Optional)
-1. Hint 1
-2. Hint 2
 
 ## Setup Guide
 Run `./build.sh`
 
 ## Solution
-Solution to this challenge
+You just need to check whether the number given is a prime number and send `true` and `false` accordingly. Sample solution in solution folder.
 
-**Flag:** GCTF{}
-
-## Recommended Reads
-* https://links.to.good.reads
-* https://www.example.com
+**Flag:** GCTF{pr1me_numbers_4re_c00l}

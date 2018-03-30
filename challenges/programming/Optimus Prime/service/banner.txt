@@ -12,4 +12,5 @@
           |__/                                                                       
 =========================================================================================================================
 Send 'true' if the number is prime, 'false' if the number is not prime.
+You have to complete 100 levels to satisfy Optimus Prime.
 

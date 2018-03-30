@@ -50,7 +50,7 @@ server.on('connection', sock => {
         }
         level += 1;
         if (level === 101) { // Players have to solve 100 levels to get the flag.
-            sock.write('Optimus Prime is satisfied, here is your flag GCTF{flag}\n');
+            sock.write('Optimus Prime is satisfied, here is your flag GCTF{pr1me_numbers_4re_c00l}\n');
             sock.destroy();
             return;
         }

@@ -4,7 +4,7 @@ import socket
 server = "127.0.0.1"
 port = 5001
 
-def getNumer(str):
+def getNumber(str):
     return int(str.split('\n')[1])
 
 def is_prime(num):
@@ -25,7 +25,7 @@ while True:
     print(result)
     if 'GCTF{' in result:
         break
-    if is_prime(getNumer(result)):
+    if is_prime(getNumber(result)):
         s.send(str("true").encode())
     else:
         s.send(str("false").encode())

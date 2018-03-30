@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import socket, threading, os, sys, re
+import socket, threading, os, sys, binascii, re
 
 HOST = "0.0.0.0"
 PORT = 50000
@@ -17,7 +17,7 @@ class Client:
 		self.addr = addr
 		clientList.append(self)
 		print("New Connection\n" + "=" * 40\
-			+ "\nIPAddr:{:>33}\nPort:{:>35}\n".format(self.addr[0], self.addr[1])\
+			+ "\nIPAddr:{:>33}\nPort:{:>35}\n".format(self.addr[0], self.addr[1])
 			+ "=" * 40 + "\n")
 		self.conn.settimeout(5)
 
@@ -35,7 +35,7 @@ class Client:
 
 		self.conn.close()
 		print("Ended Connection\n" + "=" * 40\
-			+ "\nIPAddr:{:>33}\nPort:{:>35}\nStatus: {:}\n".format(self.addr[0], self.addr[1], message)\
+			+ "\nIPAddr:{:>33}\nPort:{:>35}\nStatus: {:}\n".format(self.addr[0], self.addr[1], message)
 			+ "=" * 40 + "\n")
 
 		sys.exit()
@@ -49,12 +49,18 @@ class Client:
 			self.close("Sending failed, client dropped\n{:8}connection.".format(""))
 
 	#Receiving data from client
-	def receive(self, bufferSize = 1024):
+	def receive(self, rawBool = False, bufferSize = 1024):
 		try:
-			buff = self.conn.recv(bufferSize).decode()
+			buff = self.conn.recv(bufferSize)
+			
+			if not rawBool:
+				buff = buff.decode()
+			else:
+				buff = binascii.hexlify(buff)
+
 
 			print("Client Data Sent\n" + "=" * 40\
-			+ "\nIPAddr:{:>33}\nPort:{:>35}\nData: {:}\n".format(self.addr[0], self.addr[1], buff.strip())\
+			+ "\nIPAddr:{:>33}\nPort:{:>35}\nData: {:}\n".format(self.addr[0], self.addr[1], buff.strip())
 			+ "=" * 40 + "\n")
 
 			return buff
@@ -67,18 +73,20 @@ class Client:
 
 def handler(client):
 	client.send("Want the invitation? Gimme the secret code!\n")
-	response = client.receive()
+	response = client.receive(True)
 
-	if response == "python -c \'print \"a\" * 40 + \"\\xb1\\x05\\x40\"\' | ./a.out"\
-	or response == "python -c \'print \"a\" * 40 + \"\\xb1\\x05\\x40\"\' | ./a.out\n":
-		client.send("It seems you got the code right!\nWhat's your name: ")
-		name = client.receive().strip()
-		client.send("\n{:6}PARTY OF THE YEAR INVITATION\n".format("") +
-			"=" * 40 +
-			"\nAttendee:{:>31}\n\n".format(name) +
-			"  Use this to gain access to the party\n" +
-			" " * 7 + "GCTF{4W3S0M3_L177L3_P4R7Y}\n" +
-			"=" * 40 + "\n")
+	response = [response[i:i+2] for i in range(0, len(response), 2)]
+
+	mem = [int(i, 16) for i in response[40:43]]
+
+	if [177, 5, 64] == mem and len(response) == 44:
+		client.send("It seems you got the code right!\n")
+		client.send("\n{:6}PARTY OF THE YEAR INVITATION\n".format("")
+			+ "=" * 40
+			+ "\n{:12}Congratulations!\n\n".format("")
+			+ "  Use this to gain access to the party\n"
+			+ " " * 7 + "GCTF{4W3S0M3_L177L3_P4R7Y}\n"
+			+ "=" * 40 + "\n")
 	else:
 		client.send("Heh, not the right code.\nNo invitation for you blehhhh :)\n")
 

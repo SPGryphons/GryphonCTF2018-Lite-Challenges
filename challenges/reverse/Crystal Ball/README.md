@@ -2,7 +2,7 @@
 
 ## Question Text
 
-Hello
+I found this crystal ball, I believe I can predict the future now muhahaha.
 
 The redacted source code of the service running is given to you, you have to figure out what to send to the service to get the flag.
 
@@ -50,11 +50,11 @@ This is basically get the current hour in 24 hours format and adding it with cur
 Using 35 as the value of b.
 
 ```
-sin35 x 10000 = -4281.82669496151 			    (Math.sin(y) * 10000)
+sin35 x 10000 = -4281.82669496151				(Math.sin(y) * 10000)
 floor of -4281.82669496151 = -4281
--4281.82669496151 - -4281 = 0.82669496151 		((x - Math.floor(x))
-0.82669496151 x 10000000000 = 8266949615.1 		((x - Math.floor(x)) * 10000000000)
-floor of 8266949615.1 = 8266949615 			    (Math.floor((x - Math.floor(x)) * 10000000000))
+-4281.82669496151 - -4281 = 0.82669496151		((x - Math.floor(x))
+0.82669496151 x 10000000000 = 8266949615.1		((x - Math.floor(x)) * 10000000000)
+floor of 8266949615.1 = 8266949615				(Math.floor((x - Math.floor(x)) * 10000000000))
 ```
 
 So if 35 was given to function a, it will return 8266949615.

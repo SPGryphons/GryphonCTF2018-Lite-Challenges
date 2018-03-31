@@ -67,7 +67,7 @@ def neh():
 		4 : "Uhoh... Not right my boi"
 	}
 
-	selection = random.randint(0, 5)
+	selection = random.randint(0, 4)
 
 	return opps[selection] + "\n"
 
@@ -80,7 +80,7 @@ def praise():
 		4 : "Godlike!"
 	}
 
-	selection = random.randint(0, 5)
+	selection = random.randint(0, 4)
 
 	return praises[selection] + "\n"
 
@@ -133,6 +133,9 @@ def handler(client):
 				client.close()
 			run += 1
 		sides *= 2
+
+	client.send("You actually managed to get through this. Not bad :)\n"
+		+ "GCTF{I_K1LL3D_1T_1N_BL0CK5}\n")
 
 	client.close()
 

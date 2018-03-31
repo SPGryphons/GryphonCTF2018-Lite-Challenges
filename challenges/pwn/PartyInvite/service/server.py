@@ -6,9 +6,6 @@ PORT = 50000
 SERVERADDR = (HOST, PORT)
 TIMEOUT = 10
 
-clientList = []
-fileList = {} #{cityName:'f' - free, 'u' used}
-
 #Client object
 class Client:
 	#Initialize with socket obj and address of client

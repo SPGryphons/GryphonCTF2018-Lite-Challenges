@@ -16,7 +16,7 @@ class Client:
 		print("New Connection\n" + "=" * 40\
 			+ "\nIPAddr:{:>33}\nPort:{:>35}\n".format(self.addr[0], self.addr[1])
 			+ "=" * 40 + "\n")
-		self.conn.settimeout(5)
+		self.conn.settimeout(TIMEOUT)
 
 	#Closing action client
 	def close(self, message = "Normal Exit"):

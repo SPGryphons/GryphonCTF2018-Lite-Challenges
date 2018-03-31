@@ -10,5 +10,5 @@ Created by Noans
 1. Run `build.sh` in `service` folder.
 
 ## Solution
-Make program to count blocks
+Make program to count blocks  
 `soln.py` in solutions folder contains recommended solution.

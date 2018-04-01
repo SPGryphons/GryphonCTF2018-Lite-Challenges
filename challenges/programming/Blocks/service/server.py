@@ -52,13 +52,16 @@ class Client:
 
 			return buff
 		except socket.timeout:
-			self.send("Connection timed out!")
+			self.send(neh(True))
 			self.close("Connection timed out!")
 		except ConnectionResetError:
 			self.err = "Receiving failed, client dropped\n{:8}connection.".format("")
 			return None
 
-def neh():
+def neh(timeFactor = False):
+	if timeFactor:
+		return "Oops, time's up!\n"
+
 	opps = {
 		0 : "Oops, looks like you got it wrong...",
 		1 : "That doesn't look right, does it? Hmmm, you failed blehhh.",

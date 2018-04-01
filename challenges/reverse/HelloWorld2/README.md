@@ -16,7 +16,7 @@ Same same but different
 1. Distribute contents inside `distrib` folder
 
 ## Solution
-1. Using a Java decompiler, such as [JD-GUI] (http://jd.benow.ca/), the code can be decompiled
+1. Using a Java decompiler, such as [JD-GUI](http://jd.benow.ca/), the code can be decompiled
 2. It can be seen that the flag is *obfuscated* so the user needs to use the charset and corresponding positions of the array to recover the flag
 3. This can be done through adding a print statement and recompiling, alternatively users can also apply some elbow grease to get back the flag
 ### Flag

@@ -12,7 +12,6 @@ class Client:
 	def __init__(self, conn, addr):
 		self.conn = conn
 		self.addr = addr
-		clientList.append(self)
 		print("New Connection\n" + "=" * 40\
 			+ "\nIPAddr:{:>33}\nPort:{:>35}\n".format(self.addr[0], self.addr[1])
 			+ "=" * 40 + "\n")
@@ -20,8 +19,6 @@ class Client:
 
 	#Closing action client
 	def close(self, message = "Normal Exit"):
-		clientList.remove(self)
-
 		if hasattr(self, "err"):
 			message = self.err
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import socket, threading, os, sys, binascii, re, random
+import socket, threading, os, sys, binascii, random
 
 HOST = "0.0.0.0"
 PORT = 50000

@@ -86,11 +86,10 @@ def praise():
 
 def generate(sides):
 	pattern = ""
-	values = range(0, sides)
 	count = 0
 
-	for i in values:
-		for i in values:
+	for i in range(sides):
+		for i in range(sides):
 			if random.randint(-1,1) == 0:
 				pattern += chr(9617)
 			else:

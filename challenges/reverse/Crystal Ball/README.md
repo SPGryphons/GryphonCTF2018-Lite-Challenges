@@ -66,7 +66,7 @@ if (recieved === a(b)) {
 }
 ```
 
-What this part does is it compares if what you sent is equal to the return value of function a. Since we know the operations function a does and we also know what the value of b will be, we can calculate the value required to get the flag and send it to the server. The reset of the code is handling the connections and stuff so you can just ignore them.
+What this part does is it compares if what you sent is equal to the return value of function a. Since we know the operations function a does and we also know what the value of b will be, we can calculate the value required to get the flag and send it to the server. The rest of the code is handling the connections and stuff so you can just ignore them.
 
 Sample solution script in solution folder. You can use a calculator to solve it too.
 

@@ -15,6 +15,6 @@ I'm feeling **String**y
 1. Distribute contents inside `distrib` folder
 
 ## Solution
-1. Run `strings __ to reveal the flag
+1. Run `strings ./6986beeb6679f105067e14fea383a471 to reveal the flag
 ### Flag
 `GCTF{3asi3r_th4n_y0u_th0ught?}`

@@ -5,17 +5,17 @@ int main()
 {
 	setvbuf(stdout, NULL, _IONBF, 0);
 	
-	printf("Long Long uCandy(%%llu) + Long Long uCandy = How many Candies?(%%d)\nI want -1 candies!\n\n");
+	printf("Long Long uCandy(%%lld) + Long Long uCandy = How many Candies?(%%d)\nI want -1 candies!\n\n");
 	
 	printf("How many candies?\n");
-	unsigned long long int candy1;
-	scanf("%llu", &candy1);
+	signed long long int candy1;
+	scanf("%lld", &candy1);
 	
 	printf("\nHow many more candies?\n");
-	unsigned long long int candy2;
-	scanf("%llu", &candy2);
+	signed long long int candy2;
+	scanf("%lld", &candy2);
 	
-	int totalCandy;
+	int totalCandy=0;
 	totalCandy = candy1+candy2;
 	
 	if (candy1<0 || candy2<0)

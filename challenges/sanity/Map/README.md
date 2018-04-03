@@ -1,4 +1,4 @@
-# Look Closely
+# Map
 
 ## Question Text
 Here is a map of Singapore Polytechnic.

@@ -6,7 +6,7 @@ My friend send me this textfile with a hidden message inside and he told me ther
 
 *Creator - PotatoDrug*
 
-## Hints (Optional)
+### Hints
 1. https://en.wikipedia.org/wiki/Zero-width_space
 2. I think there is binary data inside
 

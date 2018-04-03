@@ -1,7 +1,7 @@
 # HelloWorld
 
 ## Question Text
-I just learnt C#, so logically, I wrote a simple program to test it out
+I just learnt C#, so logically, I wrote a simple program to test it out  
 *Note that the program can only be run on Windows machines*
 
 ### Hint

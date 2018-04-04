@@ -4,17 +4,19 @@
 
 I found this encrypted message and the private key, can you decrypt it for me?
 
-Created by PotatoDrug
+*Creator - PotatoDrug*
 
 ## Distribution  
 
-`785c79b5b98aca1fad5aafaffa6b3d5e.rsa` - encrypted file  
+`encrypted.rsa` - encrypted file  
 
-`e7899cd4e3d4a8a1a076118553fbd27f.pem` - private key
+`privatekey.pem` - private key
 
 ## Solution  
 
-Run `openssl rsautl -decrypt -in 785c79b5b98aca1fad5aafaffa6b3d5e.rsa -inkey private.pem` to get the flag.
+RSA is an asymmetric encryption algorithm where the public key is used to encrypt messages and private key is used to decrypt messages, so given the encrypted message and the private key you are able to decrypt the message.
+
+Run `openssl rsautl -decrypt -in encrypted.rsa -inkey privatekey.pem` to get the flag.
 
 ### Flag  
 

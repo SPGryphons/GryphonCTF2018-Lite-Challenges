@@ -1,0 +1,13 @@
+body {
+	text-align: center;
+	vertical-align: middle;
+}
+body h1 {
+	font-size: 5em;
+}
+#flag {
+	color: #fcfcfc;
+	position: absolute;
+	top: 0;
+	right: 0;
+}

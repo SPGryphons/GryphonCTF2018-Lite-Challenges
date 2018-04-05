@@ -1,0 +1,6 @@
+FROM php:7.0-apache
+RUN apt-get update
+RUN rm -rf /var/www/html/ && mkdir -p /var/www/html
+COPY ./index.php /var/www/html/
+COPY ./.htaccess /var/www/html/
+RUN chmod 755 /var/www/html/index.php

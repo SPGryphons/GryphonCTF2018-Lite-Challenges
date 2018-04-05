@@ -21,4 +21,3 @@ An overflow will always happen because a 64-bit integer is assigned to a 32-bit 
 ### Flag
 `GCTF{c4ndy_f0r_d4y5}`
 
-

@@ -11,7 +11,8 @@ My friend send me this textfile with a hidden message inside and he told me ther
 2. I think there is binary data inside
 
 ## Distribution
-youcantseeme.txt - contains text with zero-width spaces
+- youcantseeme.txt `2358a7b800730bb71f4fa06842ec910f`
+  - contains text with zero-width spaces
 
 ## Solution
 1. The players have to realize that the text file contains zero-width spaces.

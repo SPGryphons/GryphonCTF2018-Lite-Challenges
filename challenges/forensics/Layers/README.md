@@ -17,7 +17,8 @@ I have hidden and encrypted my flag! Surely nothing can go wrong now.
 3. Append the encrypted 7z archive to the png
 
 ## Distribution
-layers.png `SHA1: ddf7cf371dfe58b9225492b788eb38ab21d2b33b` 
+- layers.png `c3be2f9763a7f3ab90bb2c628a17f576` 
+  - PNG file containing hidden data
 
 ## Solution
 First you have to realize there is additional data in the png file, png files use `IEND`  to mark the image end, so you can append additional data after `IEND` and it will not affect how the image looks. Open the image in a hexeditor and you will realize there is additional data after `IEND`.

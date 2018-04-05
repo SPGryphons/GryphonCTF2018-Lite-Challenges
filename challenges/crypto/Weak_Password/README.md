@@ -16,7 +16,8 @@ We intercepted this encrypted zip file from our target, he is known to use weak 
 
 ## Distribution
 
-weakpassword.zip - encrypted zip file 
+- weakpassword.zip  `734cc514cfb49003bc3dda74e3ecbde8`
+  - Encrypted zip file
 
 
 ## Solution

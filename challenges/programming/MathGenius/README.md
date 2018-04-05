@@ -5,7 +5,7 @@ Please help me solve this entry questions to Brain Of China.
 
 Total of 20 Multiplication Questions, which increases in difficulty and only 5 seconds for each qn.
 
-`http://web.chal.gryphonctf.com:18131`
+`http://prog.chal.gryphonctf.com:18171`
 
 *Creator - WhIteLIght*
 

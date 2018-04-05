@@ -18,7 +18,8 @@ This is another paragraph.
 3. On our play server
 
 ## Distribution
-Brief description of that the individual files in `distrib` contains
+- file `MD5 HASH`
+    - Any additional description
 
 ## Solution
 Solution to this challenge

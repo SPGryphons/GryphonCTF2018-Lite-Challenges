@@ -3,6 +3,8 @@
 ## Question Text
 Help, I am so close to finish clicking, but the website reloaded...
 
+`http://web.chal.gryphonctf.com:18131`
+
 *Creator - WhIteLIght*
 
 ## Setup Guide

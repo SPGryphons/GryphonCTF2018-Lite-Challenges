@@ -4,10 +4,10 @@
 
 I discovered this masterpiece recently, wanted to share it with you guys. 
 
-Created by PotatoDrug
+*Creator - PotatoDrug*
 
 ## Distribution
-Distribute all the contents inside `distrib` folder to the users
+- lovelyspam.pyc `545fc657dff777d84e40b07c8892746b`
 
 ## Solution
 Use uncompyle2 to decompile the pyc file `uncompyle2 545fc657dff777d84e40b07c8892746b.pyc > source.py`. After decompiling we see the getFlag function which needs the correct seed.
@@ -41,4 +41,6 @@ def main():
 	getFlag('Spam')
 ```
 
-**Flag:** GCTF{lovely\_wonderful\_spammy\_python}
+### Flag
+
+`GCTF{lovely_wonderful_spammy_python}`

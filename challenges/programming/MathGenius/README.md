@@ -17,6 +17,7 @@ Do `sudo bash build.sh`
 
 ## Solution
 Create a python script that do the multiplication for you.
+
 Solution.py in solution directory
 
 ### Flag

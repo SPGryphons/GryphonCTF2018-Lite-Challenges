@@ -6,6 +6,10 @@ I found this encrypted message and the private key, can you decrypt it for me?
 
 *Creator - PotatoDrug*
 
+### Hints
+
+1. https://en.wikipedia.org/wiki/OpenSSL
+
 ## Distribution  
 
 - encrypted.rsa `785c79b5b98aca1fad5aafaffa6b3d5e`
@@ -22,7 +26,3 @@ Run `openssl rsautl -decrypt -in encrypted.rsa -inkey privatekey.pem` to get the
 ### Flag  
 
 `GCTF{45ymM37Ric_or_5ymM37Ric_3nCryP7ION}`
-
-## Recommended Reads  
-* https://en.wikipedia.org/wiki/RSA_(cryptosystem)
-* https://en.wikipedia.org/wiki/OpenSSL

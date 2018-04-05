@@ -12,6 +12,6 @@ Mummy said I can have as many candy as I want if I can't count my candies from c
 3. Run docker image: `./run.sh` in service
 
 ## Solution
-This is an integer overflow problem, where two numbers must be added to yield a negative number.
+This is an integer overflow problem, where two numbers(unsigned long long, 64bit integer) are added together and casted into a 32 bit integer (signed "normal"/long int).
 
-Connect with `nc` and enter `2147483647` (2^31 -1), then enter a second non-zero number, which should cause an overflow.
+Connect with `nc` and enter `2147483647` (2^31-1), then enter `2147483648` (2^31) as the second number, which should cause an overflow.

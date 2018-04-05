@@ -12,7 +12,8 @@ Can you identify the different encodings used and decode them?
 2. https://www.tutorialspoint.com/computer_fundamentals/computer_number_system.htm
 
 ## Distribution
-Encoding.txt - containing encoded flag
+- Encoding.txt `850b252e77ad470297468f08a7654298`
+  - Contains encoded flag
 
 ## Solution
 1. The first encoding to be decoded is base64, we'll then get a base32 encoded string.

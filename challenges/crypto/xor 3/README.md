@@ -1,4 +1,4 @@
-# XOR 2
+# XOR 3
 
 ## Question Text
 
@@ -12,13 +12,13 @@ Note: Each character is 8 bits.
 1. The key is 4 characters long.
 
 ## Distribution
-- xor2.txt `1575567ce0bcd4e0337b4495621e7fe2`
+- xor2.txt `f971247bd0b2cff855f7a9b0004502ab`
   - Contains binary string
 
 ## Solution
 You have to write a script to bruteforce the key used for the xor encryption, a sample script is in solution folder.
 
-Runtime should be under a minute.
+Runtime should be for about a minute.
 
 ### Flag 
 

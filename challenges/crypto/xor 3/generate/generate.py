@@ -18,7 +18,7 @@ def encrypt(message, key):
     return tmp
 
 def main():
-    print(encrypt('GCTF{n000_th3_k3y_was_t00_weakkk}', '8QpZ'))
+    print(encrypt('Mi secret GCTF{n000_th3_k3y_was_t00_weakkk}.', '8QpZ'))
 
 if __name__ == '__main__':
     main()

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import binascii
+import binascii, sys
 from string import ascii_letters, digits
 
 def text_to_bits(text, encoding='utf-8', errors='surrogatepass'):
@@ -29,7 +29,11 @@ def bruteforce(charset, maxlength):
         for i in range(1, maxlength + 1)))
 
 def main():
-    unknown = '011111110001001000100100000111000100001100111111010000000110101000001000000011100000010000110010000010110000111000011011011010010100000100001110000001110011101101001011000011100000010001101010000010000000111000000111001111110101100100111010000110110011000101000101'
+    if len(sys.argv) != 2:
+        print('Usage: {} <file>'.format(sys.argv[0]))
+        sys.exit()
+    with open(sys.argv[1], 'r') as f:
+        unknown = f.read()
     for key in bruteforce(ascii_letters + digits, 10):
         plaintext = decrypt(unknown, key)
         if 'GCTF{' in plaintext:

@@ -4,7 +4,7 @@ import socket, threading, os, sys, binascii, random
 HOST = "0.0.0.0"
 PORT = 50000
 SERVERADDR = (HOST, PORT)
-TIMEOUT = 10
+TIMEOUT = 5
 
 #Client object
 class Client:

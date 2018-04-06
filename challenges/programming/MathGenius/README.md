@@ -1,23 +1,26 @@
 # Math Genius
+
+## Question Text
+Please help me solve this entry questions to Brain Of China.
+
 Total of 20 Multiplication Questions, which increases in difficulty and only 5 seconds for each qn.
 
-## Creator
-By @WhIteLIght
+`http://web.chal.gryphonctf.com:18131`
 
-## Question
-Please help me solve this entry questions to Brain Of China.
+*Creator - WhIteLIght*
+
+### Hint
+https://youtu.be/5zexg3wFN70?t=14
 
 ## Setup Guide
 Do `sudo bash build.sh`
 
-## Hint
-https://youtu.be/5zexg3wFN70?t=14
-
 ## Solution
-Create a program that do the multiplication for you
- >'solution.py' in solution directory
+Create a python script that do the multiplication for you.
 
-## Flag
-GCTF{G3N1u5_K1Dz}
+Solution.py in solution directory
+
+### Flag
+`GCTF{G3N1u5_K1Dz}`
 
 

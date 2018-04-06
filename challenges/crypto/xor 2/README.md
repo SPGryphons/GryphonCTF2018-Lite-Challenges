@@ -6,17 +6,20 @@ This time I don't have the key, but I was told it is alphanumeric!
 
 Note: Each character is 8 bits.
 
-Created by PotatoDrug
+*Creator - PotatoDrug*
 
-## Hints (Optional)
+## Hints
 1. The key is 4 characters long.
 
 ## Distribution
-Distribute all the contents inside `distrib` folder to the users
+- xor2.txt `1575567ce0bcd4e0337b4495621e7fe2`
+  - Contains binary string
 
 ## Solution
 You have to write a script to bruteforce the key used for the xor encryption, a sample script is in solution folder.
 
 Runtime should be under a minute.
 
-**Flag:** GCTF{n000\_th3\_k3y\_was\_t00\_weakkk}
+### Flag 
+
+`GCTF{n000_th3_k3y_was_t00_weakkk}`

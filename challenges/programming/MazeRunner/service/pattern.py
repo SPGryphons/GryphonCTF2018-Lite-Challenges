@@ -131,13 +131,14 @@ class Maze:
 
 		return out.strip()
 	
-	def print(self):
+	def getMaze(self):
 		msg = ""
 		for row in self.__mazePattern:
 			for item in row:
 				msg += item.getFill()
 			msg += "\n"
-		print(msg[:-1].encode())
+
+		return msg[:-1]
 
 def main():
 	MazeObj = Maze(9)

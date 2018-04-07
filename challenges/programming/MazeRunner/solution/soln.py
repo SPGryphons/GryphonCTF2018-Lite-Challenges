@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
-import re
+import re, socket
+
+moveDir = {
+	0 : "up",
+	1 : "right",
+	2 : "down",
+	3 : "left"
+}
 
 moveOptions = {
 	"" : [0, 1, 2, 3],
@@ -10,7 +17,24 @@ moveOptions = {
 }
 
 def main():
-	pattern = (b'\xe2\x96\x93\xe2\x96\x91\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\n\xe2\x96\x93\xe2\x96\x91\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\n\xe2\x96\x93\xe2\x96\x91\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\n\xe2\x96\x93\xe2\x96\x91\xe2\x96\x91\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\n\xe2\x96\x93\xe2\x96\x93\xe2\x96\x91\xe2\x96\x91\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\n\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\xe2\x96\x91@\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\n\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\n\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\n\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93\xe2\x96\x93').decode()
+	conn = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+	conn.connect(("0.0.0.0", 50000))
+	conn.recv(2048)
+	conn.sendall("\n".encode())
+
+	while True:
+		mazeLevel = conn.recv(10240).decode()
+		pattern = re.match("\s+\w+\s\w+:\s(\W+)", mazeLevel)
+
+		if pattern:
+			solution = getSoln(pattern.group(1).strip())
+			conn.sendall(solution.encode())
+		elif not mazeLevel:
+			break
+		else:
+			print(mazeLevel)
+
+def getSoln(pattern):
 	pattern = re.split("\n", pattern)
 	pattern = [list(row) for row in pattern]
 	sides = len(pattern)
@@ -24,14 +48,14 @@ def main():
 		if found:
 			break
 
-	solution = pollAll(pattern, row, col)
-	print(solution)
+	solution = pollAll(pattern, row, col, [""])
+	return solution
 
-def pollAll(maze, row, col, lastMoves = [""]):
+def pollAll(maze, row, col, lastMoves):
 	movesPossible = moveOptions[lastMoves[len(lastMoves) - 1]]
-	startRow = row
-	startCol = col
+	startRow, startCol = row, col
 	newRow, newCol = [0 for _ in range(0, 2)]
+	out = ""
 
 	for move in movesPossible:
 		newRow, newCol = nextBlock(row, col, move)
@@ -42,7 +66,13 @@ def pollAll(maze, row, col, lastMoves = [""]):
 		except:
 			break
 
-	return lastMoves
+	for move in lastMoves:
+		if move == "":
+			continue
+		else:
+			out += moveDir[move] + " "
+
+	return out.strip()
 
 def nextBlock(row, col, move):
 	if move == 0:

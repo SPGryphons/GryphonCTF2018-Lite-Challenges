@@ -6,6 +6,7 @@ I chance upon this website that promise to give me the flag if i wait long enoug
  
 *Creator - WhIteLIght*
 
+`http://web.chal.gryphonctf.com:18135`
 ### Hint
 1. The future is now boy
 

@@ -3,6 +3,8 @@
 ## Question Text
 Same concept as before, but if you feel stuck perhaps you could lie on a PILlow and take a break.
 
+*Creator - ccs*
+
 ## Setup Guide
 1. Copy paste some rubbish text into a txt file, paste flag somewhere in the middle
 2. Generate image from txt file with cc2.py

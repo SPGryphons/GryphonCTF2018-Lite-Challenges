@@ -3,8 +3,10 @@
 ## Question Text
 Traditionally, Chinese text was written in vertical columns which were read from top to bottom, right-to-left; the first column being on the right side of the page, and the last column on the left. -https://en.wikipedia.org/wiki/Written_Chinese 
 
+*Creator - ccs*
+
 ## Hint
-Why is the height 8 "pixels"?
+8 bits = 1 byte
 
 ## Setup Guide
 1. Generate image with cc.py

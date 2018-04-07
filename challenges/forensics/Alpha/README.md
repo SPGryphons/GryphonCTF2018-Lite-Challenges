@@ -3,6 +3,8 @@
 ## Question Text
 My friend sent me this photo of his favourite star wars character, ARC trooper Alpha-17. However, I can't seem to see anything on it.
 
+*Creator - ccs*
+
 ## Setup Guide
 1. Generate transparent image with image file and alpha.py
 

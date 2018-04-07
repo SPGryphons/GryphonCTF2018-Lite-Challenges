@@ -4,7 +4,9 @@
 
 I brought my obfuscation skills to the next level!
 
-Created by PotatoDrug
+`http://web.chal.gryphonctf.com:18134`
+
+*Creator - PotatoDrug*
 
 ## Setup Guide
 Run `./build.sh`
@@ -68,7 +70,9 @@ function checkFlag() {
 
 The anti-debugging code doesn't run in chrome if when you first visit the page you do not have developer tools open. You can then open developer tools and the anti-debugging tool will not run, so you can skip the first part and get the flag directly  using `GCTF_0x51fa('0xa', 'K#8j')`. If you click on the submit button or refresh the page with developer tools open the anti-debugging code will work again.
 
-**Flag:** GCTF{n0t\_s0\_s1mple\_0bfusc4t10n}
+### Flag
+
+`GCTF{n0t_s0_s1mple_0bfusc4t10n}`
 
 ## Recommended Reads
 * https://developers.google.com/web/tools/chrome-devtools/javascript/

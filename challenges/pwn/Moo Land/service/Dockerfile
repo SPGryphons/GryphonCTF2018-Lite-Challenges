@@ -1,28 +1,25 @@
-FROM ubuntu:latest
+FROM node:9-alpine
 
-ENV HOME=/home/moo
-
-RUN apt-get update && \
-    apt-get install -y nodejs cowsay
-
-RUN useradd -s /bin/rbash -m moo
+RUN adduser -s /bin/rbash -D moo
+RUN apk add --no-cache bash
 
 COPY ./banner.txt /home/moo/
 COPY ./server.js /home/moo/
 COPY ./flag.txt /home/moo/
 
-WORKDIR /home/moo
+RUN mkdir /home/moo/progs && \
+    ln -s /bin/ls /home/moo/progs/ && \
+    ln -s /bin/cat /home/moo/progs/
 
-RUN mkdir progs && \
-    ln -s /bin/ls progs/ && \
-    ln -s /bin/cat progs/ && \
-    ln -s /usr/games/cowsay progs/
+COPY ./cowsay /home/moo/progs/
 
 RUN chown -R root:moo /home/moo && \
     chmod -R 750 /home/moo
 
 USER moo
+WORKDIR /home/moo
+ENV HOME=/home/moo
 ENV PATH=/home/moo/progs
 EXPOSE 5000
 
-CMD ["/usr/bin/nodejs", "/home/moo/server.js"]
+CMD ["/usr/local/bin/node", "/home/moo/server.js"]

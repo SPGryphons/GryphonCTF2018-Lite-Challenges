@@ -1,4 +1,4 @@
-# Patience Boy
+# Timer
 
 ## Question Text
 

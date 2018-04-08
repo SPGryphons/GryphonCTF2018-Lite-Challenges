@@ -18,7 +18,7 @@ moveOptions = {
 
 class Blocks:
 	def __init__(self, row, col):
-		self.__fill = chr(9619)
+		self.__fill = "#"
 		self.__visited = False
 
 	# True means block cannot be "visited"
@@ -33,14 +33,9 @@ class Blocks:
 		return self.__fill
 
 class Maze:
-	# [1, 2, 3] row = 0
-	# [4, 5, 6] row = 1
-	# [7, 8, 9]
-	# row horizontal
-	# col vertical
-
 	def __init__(self, sides):
 		self.__sides = sides
+		self.__success = False
 		self.__mazePattern = [[Blocks(row, col) for col in range(0, sides)] for row in range(0, sides)]
 		# Taken from a vertical perspective
 		topOffset = int(sides / 3)
@@ -62,7 +57,7 @@ class Maze:
 		and self.__currRow != self.__sides - 1\
 		and self.__currCol != 0\
 		and self.__currCol != self.__sides - 1:
-			movesPossible = moveOptions[lastMove]
+			movesPossible = list(moveOptions[lastMove])
 			removalList = []
 
 			for move in movesPossible:
@@ -77,8 +72,14 @@ class Maze:
 			for move in removalList:
 				movesPossible.remove(move)
 
-			lastMove = self.__move(movesPossible)
+			try:
+				lastMove = self.__move(movesPossible)
+			except:
+				return
+
 			self.__solution.append(lastMove)
+
+		self.__success = True
 
 	def __move(self, movesPossible):
 		move = movesPossible[random.randint(0, len(movesPossible) - 1)]
@@ -92,7 +93,7 @@ class Maze:
 		elif move == 3:
 			self.__currCol -= 1
 
-		self.__mazePattern[self.__currRow][self.__currCol].setFill(chr(9617))
+		self.__mazePattern[self.__currRow][self.__currCol].setFill("O")
 
 		return move
 
@@ -140,9 +141,16 @@ class Maze:
 
 		return msg[:-1]
 
+	def getSuccess(self):
+		return self.__success
+
 def main():
-	MazeObj = Maze(9)
-	MazeObj.print()
+	MazeObj = Maze(50)
+
+	while not MazeObj.getSuccess():
+		MazeObj = Maze(50)
+
+	print(MazeObj.getMaze())
 	print(MazeObj.getSolution())
 
 if __name__ == "__main__":

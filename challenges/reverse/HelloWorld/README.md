@@ -14,6 +14,7 @@ De-compilation
 
 ## Distribution
 1. Distribute contents inside `distrib` folder
+`SHA1: 63889b3424ce77775b4247876cdcfcc1541c1a08`
 
 ## Solution
 1. Using a C# decompiler, optimally [JetBrains' dotPeek](https://www.jetbrains.com/decompiler/), the code can be revealed easily

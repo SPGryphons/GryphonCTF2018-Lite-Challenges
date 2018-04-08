@@ -61,22 +61,22 @@ def handler(client):
 	client.send("Find your way out of the Maze :)\n"
 		+ "{:20}HOW TO PLAY\n".format("")
 		+ "=" * 51 + "\n"
-		+ "1. A 50 x 50 maze will be generated containing blo-\n   cks ▓ and ░.\n"
+		+ "1. A 50 x 50 maze will be generated containing blo-\n   cks # and O.\n"
 		+ "2. The initial position of the player is marked by\n   the \"@\" symbol\n"
-		+ "3. ▓ indicate walls that are should not be touched\n   ░ indicates path that can be taken.\n"
+		+ "3. \"#\" indicate walls that are should not be touch-\n   ed\n   \"O\" indicates path that can be taken.\n"
 		+ "4. There are 10 mazes to complete\n"
 		+ "5. Players have 3 seconds to complete the maze.\n"
 		+ "\nExample:\n"
-		+ "▓▓▓▓▓▓▓▓▓\n"
-		+ "▓▓▓▓▓▓▓▓▓\n"
-		+ "▓▓▓▓▓▓▓▓▓\n"
-		+ "▓▓▓▓▓▓▓▓▓\n"
-		+ "▓▓▓▓▓▓▓▓▓\n"
-		+ "▓▓▓░░░░░░\n"
-		+ "▓▓▓@▓▓▓▓▓\n"
-		+ "▓▓▓▓▓▓▓▓▓\n"
-		+ "▓▓▓▓▓▓▓▓▓\n"
-		+ "Solution: \"up right right right right right\"\n\n"
+		+ "###O#####\n"
+		+ "###O#####\n"
+		+ "###O#####\n"
+		+ "###OO####\n"
+		+ "####O####\n"
+		+ "####O####\n"
+		+ "####O@###\n"
+		+ "#########\n"
+		+ "#########\n"
+		+ "Solution: \"left up up up left up up up\"\n\n"
 		+ "HIT ENTER TO CONTINUE")
 	client.receive()
 	client.conn.settimeout(TIMEOUT)
@@ -84,6 +84,10 @@ def handler(client):
 
 	for i in range(1, 11):
 		maze = pattern.Maze(50)
+
+		while not maze.getSuccess():
+			maze = pattern.Maze(50)
+
 		client.send("\nLevel " + str(i) + ":\n" + maze.getMaze() + "\nSolution: ")
 		response = client.receive()
 

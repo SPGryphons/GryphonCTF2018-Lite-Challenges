@@ -24,7 +24,7 @@ def main():
 
 	while True:
 		mazeLevel = conn.recv(10240).decode()
-		pattern = re.match("\s+\w+\s\w+:\s(\W+)", mazeLevel)
+		pattern = re.match("\s+\w+\s\w+:\s([#O@\s]+)", mazeLevel)
 
 		if pattern:
 			solution = getSoln(pattern.group(1).strip())
@@ -60,7 +60,7 @@ def pollAll(maze, row, col, lastMoves):
 	for move in movesPossible:
 		newRow, newCol = nextBlock(row, col, move)
 		try:
-			if maze[newRow][newCol] == "░":
+			if maze[newRow][newCol] == "O":
 				lastMoves.append(move)
 				pollAll(maze, newRow, newCol, lastMoves)
 		except:

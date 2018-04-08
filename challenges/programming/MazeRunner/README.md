@@ -3,7 +3,7 @@
 ## Question Text
 Can you get out of this madness? Find your way out and get the flag!
 
-Created by Noans
+*Created - Noans*
 
 ## Setup Guide
 1. Run `build.sh` in `service` folder.
@@ -22,3 +22,6 @@ The algorithm in the solution is as such:
 6. Finish once exit of maze is found.
 
 The algorithm tracks all moves made and sends them to the server for each maze received.
+
+### Flag
+`GCTF{H3h_I'M_S4F3}`

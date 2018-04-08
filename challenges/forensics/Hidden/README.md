@@ -7,7 +7,7 @@ Is this really an image...
 *Creator - WhIteLIght*
 
 ## Distribution
-- flag.jpg `d3e029ed555a689f00ebeac4096e9bc3`
+- flag.jpg `02dc24ee8dabdc27274f11f4077ea5121f1f1739`
 
 ## Solution
 1. Change the extension of the file to zip

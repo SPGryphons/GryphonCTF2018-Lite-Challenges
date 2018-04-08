@@ -16,7 +16,15 @@ This is an integer overflow problem, where two numbers(unsigned long long, 64bit
 
 Connect with `nc` and enter `2147483647` (2^31-1), then enter `2147483648` (2^31) as the second number. 
 
-An overflow will always happen because a 64-bit integer is assigned to a 32-bit integer (higher order bits are ignored). The goal here is to get the binary repreesentation of -1 (two's complement, signed integer: all 32 digits have value of 1). 
+The goal here is to get the binary representation of -1 stored in a 32-bit integer (using two's complement) by adding two numbers together.
+
+An illustration is shown below:
+
+Input		| Binary 										|
+----		| ---											|
+2147483647	|`0111 1111, 1111 1111, 1111 1111, 1111 1111`	| 
+2147483648	|`1000 0000, 0000 0000, 0000 0000, 0000 0000`	|
+**Total**	|`1111 1111, 1111 1111, 1111 1111, 1111 1111`	|	
 
 ### Flag
 `GCTF{c4ndy_f0r_d4y5}`

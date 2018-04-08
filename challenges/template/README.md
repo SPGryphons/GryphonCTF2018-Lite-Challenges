@@ -18,8 +18,12 @@ This is another paragraph.
 3. On our play server
 
 ## Distribution
-- file `MD5 HASH`
-    - Any additional description
+- filename1.txt
+    - SHA1: `SHA1 Hash here`
+    - Any additional description (Optional)
+- filename2.txt
+    - SHA1: `SHA1 Hash here`
+    - Any additional description (Optional)
 
 ## Solution
 Solution to this challenge

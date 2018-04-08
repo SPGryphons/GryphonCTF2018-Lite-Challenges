@@ -11,7 +11,7 @@ My friend send me this textfile with a hidden message inside and he told me ther
 2. I think there is binary data inside
 
 ## Distribution
-- youcantseeme.txt `2358a7b800730bb71f4fa06842ec910f`
+- youcantseeme.txt `bf4682e498f307f41fd939222de335ab3130ec53`
   - contains text with zero-width spaces
 
 ## Solution

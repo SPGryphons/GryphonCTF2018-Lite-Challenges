@@ -94,9 +94,9 @@ def generate(sides):
 	for i in range(sides):
 		for i in range(sides):
 			if random.randint(-1,1) == 0:
-				pattern += chr(9617)
+				pattern += "O"
 			else:
-				pattern += chr(9619)
+				pattern += "#"
 				count += 1
 		pattern += "\n"
 
@@ -107,8 +107,8 @@ def handler(client):
 	client.send("Welcome to Blocks:\n\n"
 		+ "{:20}HOW TO PLAY\n".format("")
 		+ "=" * 51 + "\n"
-		+ "1. A pattern of equal height and width will be gen-\n   erated containing blocks of either ▓ or ░.\n"
-		+ "2. Count the number of ▓ in each pattern.\n"
+		+ "1. A pattern of equal height and width will be gen-\n   erated containing blocks of either # or O.\n"
+		+ "2. Count the number of # in each pattern.\n"
 		+ "3. Send the value back to the server within 5 seco-\n   nds.\n"
 		+ "4. There are a total of 50 levels\n"
 		+ "5. The height and width of the pattern doubles eve-\n   ry 10 levels\n\n"

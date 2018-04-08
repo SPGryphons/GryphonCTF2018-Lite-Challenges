@@ -97,7 +97,7 @@ def handler(client):
 
 		newline += "\n"
 
-	client.send("Nicely done! The flag's GCTF{7H3_GL4D3}")
+	client.send("Nicely done! The flag's GCTF{H3h_I\'M_S4F3}")
 	client.close()
 
 def main():

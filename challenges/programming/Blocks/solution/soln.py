@@ -25,7 +25,7 @@ def main():
 			break
 
 		if re.search("Level", response):
-			count = response.count("▓")
+			count = response.count("#")
 			sock.sendall(str(count).encode())
 		else:
 			print(response)

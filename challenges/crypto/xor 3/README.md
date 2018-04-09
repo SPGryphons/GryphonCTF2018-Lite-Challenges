@@ -12,7 +12,8 @@ Note: Each character is 8 bits.
 1. The key is 4 characters long.
 
 ## Distribution
-- xor2.txt `f971247bd0b2cff855f7a9b0004502ab`
+- xor3.txt 
+  - SHA1: `524ed746885b66e3017b2cce263fb81b91d72eec`
   - Contains binary string
 
 ## Solution

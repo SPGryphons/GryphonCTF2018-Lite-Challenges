@@ -12,7 +12,8 @@ Can you identify the different encodings used and decode them?
 2. https://www.tutorialspoint.com/computer_fundamentals/computer_number_system.htm
 
 ## Distribution
-- Encoding.txt `850b252e77ad470297468f08a7654298`
+- Encoding.txt 
+  - SHA1: `9ea000328a502dd5965a15e0fee81c0ffa7f7fcf`
   - Contains encoded flag
 
 ## Solution

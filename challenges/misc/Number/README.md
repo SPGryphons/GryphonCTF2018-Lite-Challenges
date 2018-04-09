@@ -14,7 +14,8 @@ Decimal encoded text?
 Generate flag using python script in generate
 
 ## Distribution
-- Number.txt `a1cd5583c6de3bdadfbca78fee1b0f82`
+- Number.txt 
+  - SHA1: `c3816d2f53aca7e2128ed360bcd355a9dd30655f`
   - Contains a large number
 
 ## Solution

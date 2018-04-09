@@ -9,14 +9,14 @@ We intercepted this encrypted zip file from our target, he is known to use weak 
 ### Hint
 
 1. rockyou.txt probably has the password
-2. I head fcrackzip is a useful tool for cracking zip files
 
 ## Setup Guide
 1. Put flag.txt into a encrypted zip file with a password from rockyou.txt
 
 ## Distribution
 
-- weakpassword.zip  `734cc514cfb49003bc3dda74e3ecbde8`
+- weakpassword.zip  
+  - SHA1: `6f4232d9f724943b99cca84504534d8324dbdb25`
   - Encrypted zip file
 
 

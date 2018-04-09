@@ -13,4 +13,4 @@ Program a python script to connect to server and parse input
 `soln.py` in solutions folder contains recommended solution.
 
 ### Flag
-`GCTF{H3h_I\'M_S4F3}`
+`GCTF{H3h_I'M_S4F3}`

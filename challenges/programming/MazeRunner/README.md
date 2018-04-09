@@ -3,7 +3,7 @@
 ## Question Text
 Can you get out of this madness? Find your way out and get the flag!
 
-`nc pwn.chal.gryphonctf.com 18174`
+`nc prog.chal.gryphonctf.com 18174`
 
 *Created - Noans*
 

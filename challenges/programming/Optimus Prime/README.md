@@ -4,14 +4,18 @@
 
 Optimus Prime is lonely, help him find his friends!
 
-`nc <server> <port>`
+`nc prog.chal.gryphonctf.com 18172`
 
-Created by PotatoDrug
+*Creator - PotatoDrug*
 
 ## Setup Guide
 Run `./build.sh`
 
 ## Solution
-You just need to check whether the number given is a prime number and send `true` and `false` accordingly. Sample solution in solution folder.
+You need to check whether the number given is a prime number and send `true` and `false` accordingly, and repeat that for 100 levels.
 
-**Flag:** GCTF{pr1me_numbers_4re_c00l}
+Sample solution in solution folder.
+
+### Flag
+
+`GCTF{pr1me_numbers_4re_c00l}`

@@ -4,12 +4,15 @@
 
 My friend sent me this image and asked me to comment on it.
 
-Created by PotatoDrug
+*Creator - PotatoDrug*
 
 ## Distribution
-Distribute all the contents inside `distrib` folder to the users
+- meta.jpg
+  - SHA1: `e67e539656434bcdc0123794500422ec4212ec13`
 
 ## Solution
 The flag is in the meta data of the picture, under Description > Comments.
 
-**Flag:** GCTF{m1st5r_met4_d4t4}
+### Flag
+
+`GCTF{m1st5r_met4_d4t4}`

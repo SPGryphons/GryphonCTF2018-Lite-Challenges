@@ -4,9 +4,11 @@
 
 I found this website that checks if a flag is valid!
 
-Created by PotatoDrug
+`http://web.chal.gryphonctf.com:18133`
 
-## Hints (Optional)
+*Creator - PotatoDrug*
+
+## Hints
 
 1. https://en.wikipedia.org/wiki/Esoteric_programming_language
 
@@ -20,4 +22,6 @@ View source and find script.js
 
 Open script.js and you will find obfuscated javascript using jsfuck, decode it using any jsfuck decoder and you will see the source code containing the flag.
 
-Flag: GCTF{an\_e4sy\_obfusc4ti0n}
+### Flag
+
+`GCTF{an_e4sy_obfusc4ti0n}`

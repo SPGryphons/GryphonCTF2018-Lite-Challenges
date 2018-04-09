@@ -7,7 +7,8 @@ Each hash is a word, submit the flag in the format `GCTF{<word>_<word>_<word>_<w
 *Creator - PotatoDrug*
 
 ## Distribution
-- broken_hash.txt `e5411f61b79bdfda2fdf61cb3917f060`
+- broken_hash.txt 
+  - SHA1: `373ed5f89b236ed48da6aa7fcadb96dc184d3b77`
   - Text file containing the md5 hashes
 
 ## Solution

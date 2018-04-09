@@ -1,0 +1,3 @@
+ServerSignature Off
+Options -Indexes
+RedirectMatch 404 \.txt$

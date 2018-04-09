@@ -14,7 +14,8 @@ The redacted source code of the service running is given to you, you have to fig
 Run `./build.sh`
 
 ## Distribution
-- crystallball.js  `020102fba0961a615711203ceb720526`
+- crystallball.js  
+  - SHA1: `887f2306427e7b521206e5b35df73fb3837b712d`
   - source code for the service of this challenge
 
 ## Solution

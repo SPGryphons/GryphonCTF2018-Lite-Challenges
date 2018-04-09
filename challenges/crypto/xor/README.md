@@ -7,7 +7,8 @@ I was given 2 binary strings, I don't know what to do with them though...
 *Creator - PotatoDrug*
 
 ## Distribution
-- xor.txt `d8d8d454d5012c25c5add2dbd383a271`
+- xor.txt 
+  - SHA1: `8a301d8c1aa7db1e8a76d25c640b306384446b9b`
   - Contains 2 binary strings
 
 ## Solution

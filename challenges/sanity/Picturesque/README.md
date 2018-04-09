@@ -9,8 +9,8 @@ I dunno, something feels rather... picturesque about this text file
 1. Change file extension of picture from `png` to `txt`
 
 ## Distribution
-1. Distribute contents inside `distrib` folder
-`SHA1: 01ae1c59aef39092db4881be52822fe852355814`
+- picture.txt
+	-SHA1: `01ae1c59aef39092db4881be52822fe852355814`
 
 ## Solution
 1. Change extention of text file back to `.png` and open in a image viewer to see the flag

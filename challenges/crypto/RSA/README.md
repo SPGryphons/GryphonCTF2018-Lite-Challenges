@@ -12,9 +12,11 @@ I found this encrypted message and the private key, can you decrypt it for me?
 
 ## Distribution  
 
-- encrypted.rsa `785c79b5b98aca1fad5aafaffa6b3d5e`
+- encrypted.rsa 
+  - SHA1: `c56135a79a877918ca640da6e12d6ce0124142ff`
   - Encrypted file 
-- privatekey.pem `e7899cd4e3d4a8a1a076118553fbd27f`
+- privatekey.pem 
+  - SHA1: `635358112c371ef86e0897485114c701c9d416b4`
   - RSA Private key
 
 ## Solution  

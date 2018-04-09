@@ -13,7 +13,8 @@ Note: Submit the flag in this format GCTF{\<decrypted text goes here\>}
 1. http://practicalcryptography.com/cryptanalysis/text-characterisation/identifying-unknown-ciphers/
 
 ## Distribution
-- not_binary.txt `4e414e1bcada63ca5022b3cb602e83cd`
+- not_binary.txt 
+  - SHA1: `f8ebb7a654a2b7213458ee15a75934e9658eb4ea`
   - Long string of 0s and 1s
 
 ## Solution

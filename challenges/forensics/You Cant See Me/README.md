@@ -7,8 +7,7 @@ My friend send me this textfile with a hidden message inside and he told me ther
 *Creator - PotatoDrug*
 
 ### Hints
-1. https://en.wikipedia.org/wiki/Zero-width_space
-2. I think there is binary data inside
+1. I think there is binary data inside
 
 ## Distribution
 - youcantseeme.txt
@@ -16,7 +15,7 @@ My friend send me this textfile with a hidden message inside and he told me ther
   - contains text with zero-width spaces
 
 ## Solution
-1. The players have to realize that the text file contains zero-width spaces.
+1. The players have to realize that the text file contains [zero-width spaces](https://en.wikipedia.org/wiki/Zero-width_space)
 2. After that they have to figure out how data is encoded using zero-width spaces. The data is encoded using the following method.
 
 ```

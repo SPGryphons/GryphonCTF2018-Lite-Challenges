@@ -62,28 +62,28 @@ def neh(timeFactor = False):
 	if timeFactor:
 		return "Oops, time's up!\n"
 
-	opps = {
-		0 : "Oops, looks like you got it wrong...",
-		1 : "That doesn't look right, does it? Hmmm, you failed blehhh.",
-		2 : "Gotta try again next time...",
-		3 : "Heh, need more practice eh?",
-		4 : "Uhoh... Not right my boi"
-	}
+	opps = [
+		"Oops, looks like you got it wrong...",
+		"That doesn't look right, does it? Hmmm, you failed blehhh.",
+		"Gotta try again next time...",
+		"Heh, need more practice eh?",
+		"Uhoh... Not right my boi"
+	]
 
-	selection = random.randint(0, 4)
+	selection = random.randint(0, len(opps) - 1)
 
 	return opps[selection] + "\n"
 
 def praise():
 	praises = {
-		0 : "Awesome job!",
-		1 : "Great work :)",
-		2 : "You're burning through tis hmm",
-		3 : "Hehe, itz easy eh?",
-		4 : "Godlike!"
+		"Awesome job!",
+		"Great work :)",
+		"You're burning through tis hmm",
+		"Hehe, itz easy eh?",
+		"Godlike!"
 	}
 
-	selection = random.randint(0, 4)
+	selection = random.randint(0, len(praises) - 1)
 
 	return praises[selection] + "\n"
 

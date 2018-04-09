@@ -6,7 +6,8 @@ There is a flag in this file somewhere, please help me find it
 *Creator - ccs*
 
 ## Distribution
-unknownfile `SHA1: 93a66f422a034a361c45e907704d97fe64a55b7e`
+- unknownfile
+  - `SHA1: 93a66f422a034a361c45e907704d97fe64a55b7e`
 
 ## Solution
 1. open with notepad and find out that the extension is .stl

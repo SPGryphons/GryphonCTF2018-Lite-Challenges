@@ -9,8 +9,8 @@ Gotta count them all!
 1. Run `build.sh` in `service` folder.
 
 ## Solution
-Make program to count blocks  
+Program a python script to connect to server and parse input  
 `soln.py` in solutions folder contains recommended solution.
 
-###Flag
+### Flag
 `GCTF{H3h_I\'M_S4F3}`

@@ -137,7 +137,7 @@ def handler(client):
 		sides *= 2
 
 	client.send("You actually managed to get through this. Not bad :)\n"
-		+ "GCTF{I_K1LL3D_1T_1N_BL0CK5}\n")
+		+ "GCTF{H3h_I\'M_S4F3}\n")
 
 	client.close()
 

@@ -16,7 +16,8 @@ There has been some liars sneaking through my program can you catch 3 of them fo
 Run `./build.sh`
 
 ## Distribution
-- liars.js `69bc64163f45250e1f4d9ec7465490d6`
+- liars.js 
+    - SHA1:`97f34ee156da4bb1a1476005d132e02c9337d3b6`
     - Redacted source code for the service
 
 ## Solution

@@ -12,7 +12,8 @@ Note: Each character is 8 bits.
 1. What happens if you xor ciphertext with the plaintext?
 
 ## Distribution
-- xor2.txt `b2c93f31a6d8d12642bee3fde080faad`
+- xor2.txt 
+  - SHA1: `d966353848dbc308aaee5a9b41451f803809b35f`
   - Contains binary string
 
 ## Solution

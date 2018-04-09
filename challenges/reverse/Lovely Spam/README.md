@@ -7,7 +7,8 @@ I discovered this masterpiece recently, wanted to share it with you guys.
 *Creator - PotatoDrug*
 
 ## Distribution
-- lovelyspam.pyc `545fc657dff777d84e40b07c8892746b`
+- lovelyspam.pyc 
+  - SHA1: `905b7fdcf9cd613400458708f6fc6eec53bfe90d`
 
 ## Solution
 Use uncompyle2 to decompile the pyc file `uncompyle2 545fc657dff777d84e40b07c8892746b.pyc > source.py`. After decompiling we see the getFlag function which needs the correct seed.

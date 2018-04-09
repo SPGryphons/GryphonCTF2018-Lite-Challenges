@@ -7,7 +7,8 @@ My friend sent me this image and asked me to comment on it.
 *Creator - PotatoDrug*
 
 ## Distribution
-- meta.jpg `b165c655a311ad2013b1a87618d28644`
+- meta.jpg
+  - SHA1: `e67e539656434bcdc0123794500422ec4212ec13`
 
 ## Solution
 The flag is in the meta data of the picture, under Description > Comments.

@@ -6,9 +6,8 @@ def random(seed):
     x = math.sin(seed) * 10000
     return int((x - math.floor(x)) * 10000000000)
 
-server = "127.0.0.1"
-# port = 18211
-port = 5002
+server = "rev.chal.gryphonctf.com"
+port = 18211
 
 x = ntplib.NTPClient()
 # print(datetime.datetime.utcfromtimestamp(x.request('pool.ntp.org').tx_time))

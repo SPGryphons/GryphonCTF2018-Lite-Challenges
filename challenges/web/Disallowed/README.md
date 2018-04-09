@@ -4,7 +4,9 @@
 
 I set up my website so that robots can't steal away my flag!
 
-Created by PotatoDrug
+`http://web.chal.gryphonctf.com:18132`
+
+*Creator - PotatoDrug*
 
 ## Setup Guide
 Run `./build.sh`
@@ -17,4 +19,6 @@ User-agent: *
 Disallow: /f4ce14af2704da2ff9e5c0b059b683b4bfd3ee00.txt
 ```
 
-**Flag:** GCTF{r0b0ts\_4r5\_n0\_m4tch\_4\_me}
+### Flag
+
+`GCTF{r0b0ts_4r5_n0_m4tch_4_me}`

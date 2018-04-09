@@ -6,9 +6,9 @@ Challenge description and how to play (if applicable).
 
 This is another paragraph.
 
-Created by YourNickname (or real name)
+*Creator - YourNickname (or real name)*
 
-## Hints (Optional)
+### Hints (Optional)
 1. Hint 1
 2. Hint 2
 
@@ -18,10 +18,18 @@ Created by YourNickname (or real name)
 3. On our play server
 
 ## Distribution
-Distribute all the contents inside `distrib` folder to the users
+- filename1.txt
+    - SHA1: `SHA1 Hash here`
+    - Any additional description (Optional)
+- filename2.txt
+    - SHA1: `SHA1 Hash here`
+    - Any additional description (Optional)
 
 ## Solution
 Solution to this challenge
+
+### Flag
+`GCTF{This is the flag}`
 
 ## Recommended Reads
 * https://links.to.good.reads

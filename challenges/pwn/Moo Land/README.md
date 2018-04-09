@@ -4,9 +4,9 @@
 
 I found some talking cows!
 
-`nc <server> <port> `
+`nc pwn.chal.gryphonctf.com 18151 `
 
-Created by PotatoDrug
+*Creator - PotatoDrug*
 
 ## Setup Guide
 Run `./build.sh`
@@ -16,4 +16,6 @@ There is no input sanitization at all so you can execute whatever commands you w
 
 `hi;ls` will show you flag.txt, `hi;cat flag.txt` will give you the flag.
 
-**Flag:** GCTF{wh4t\_d0es\_the\_c0w\_s4y}
+### Flag
+
+`GCTF{wh4t_d0es_the_c0w_s4y}`

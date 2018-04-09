@@ -4,12 +4,16 @@
 
 Each hash is a word, submit the flag in the format `GCTF{<word>_<word>_<word>_<word>}`
 
-Created by PotatoDrug
+*Creator - PotatoDrug*
 
 ## Distribution
-Distribute all the contents inside `distrib` folder to the users
+- broken_hash.txt 
+  - SHA1: `373ed5f89b236ed48da6aa7fcadb96dc184d3b77`
+  - Text file containing the md5 hashes
 
 ## Solution
 The player should identify the hashes as md5 hash and find the plaintext of the hashes by using any md5 decrypter service.
 
-Flag: GCTF{md5\_is\_too\_broken}
+### Flag
+
+`GCTF{md5_is_too_broken}`

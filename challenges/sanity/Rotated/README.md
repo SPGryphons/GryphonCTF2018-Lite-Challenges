@@ -10,7 +10,7 @@ I performed 13 ROTations on this
 
 ## Distribution
 - ROT.txt
-  - SHA1: `309f2b3a6e3069208c96b87a4d653cab61361141`
+	- SHA1: `309f2b3a6e3069208c96b87a4d653cab61361141`
 
 ## Solution
 1. Decode using online ROT-13 decoders such as https://www.dcode.fr/rot-13-cipher

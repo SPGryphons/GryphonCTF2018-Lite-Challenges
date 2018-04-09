@@ -75,13 +75,13 @@ def neh(timeFactor = False):
 	return opps[selection] + "\n"
 
 def praise():
-	praises = {
+	praises = [
 		"Awesome job!",
 		"Great work :)",
 		"You're burning through tis hmm",
 		"Hehe, itz easy eh?",
 		"Godlike!"
-	}
+	]
 
 	selection = random.randint(0, len(praises) - 1)
 

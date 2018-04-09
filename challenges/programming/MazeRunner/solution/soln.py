@@ -18,7 +18,7 @@ moveOptions = {
 
 def main():
 	conn = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-	conn.connect(("pwn.chal.gryphonctf", 18174))
+	conn.connect(("prog.chal.gryphonctf", 18174))
 	conn.recv(2048)
 	conn.sendall("\n".encode())
 

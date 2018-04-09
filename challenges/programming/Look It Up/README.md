@@ -15,7 +15,7 @@ Answering it wrongly or too slowly and the connection will close.
 
 `prog.chal.gryphonctf.com:18173`
 
-**Sample Input (The arrows do not appear when you connect):**
+**Input from Server (The arrows do not appear when you connect):**
 ```
 13  <----- N
 0,4,ESSIX  <------- X,Y,Z
@@ -37,7 +37,7 @@ Answering it wrongly or too slowly and the connection will close.
 ... (Repeat 7 more times)
 ```
 
-**Sample Output:**
+**Your Answer:**
 ```
 PAMPERIN
 OBERLOH

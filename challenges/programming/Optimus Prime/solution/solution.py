@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 import socket
 
-server = "127.0.0.1"
-port = 5001
+server = "prog.chal.gryphonctf.com"
+port = 18172
 
 def getNumber(str):
     return int(str.split('\n')[1])

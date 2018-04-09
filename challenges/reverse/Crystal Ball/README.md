@@ -6,15 +6,17 @@ I found this crystal ball, I believe I can predict the future now muhahaha.
 
 The redacted source code of the service running is given to you, you have to figure out what to send to the service to get the flag.
 
-`nc <server> <port>`
+`nc rev.chal.gryphonctf.com 18211`
 
-Created by PotatoDrug
+*Creator - PotatoDrug*
 
 ## Setup Guide
 Run `./build.sh`
 
 ## Distribution
-Distribute all the contents inside `distrib` folder to the users
+- crystallball.js  
+  - SHA1: `887f2306427e7b521206e5b35df73fb3837b712d`
+  - source code for the service of this challenge
 
 ## Solution
 Let us go through the code required to solve this challenge.
@@ -41,11 +43,15 @@ Math.floor(-45.95); // -46
 What `Math.floor()` does is it returns the largest integer less than or equal to the given value.
 
 ```javascript
-let date = new Date();
-let b = date.getHours() + date.getMinutes();
+ntpClient.getNetworkTime("pool.ntp.org", 123, (err, date) => {
+    if(err) {
+        console.error(err);
+        return;
+    }
+    let b = JSON.stringify(date).match(/T\d\d:\d\d/)[0].substring(1).split(':').map(Number).reduce((a, b) => a + b, 0);
 ```
 
-This is basically get the current hour in 24 hours format and adding it with current minute. For example if time now is 23:12 then b will be 35.
+This code is connecting to a NTP server on port 123 and setting b to the sum of the hour and minute from the NTP server. One thing to note is NTP servers always respond with UTC time.
 
 Using 35 as the value of b.
 
@@ -70,4 +76,6 @@ What this part does is it compares if what you sent is equal to the return value
 
 Sample solution script in solution folder. You can use a calculator to solve it too.
 
-Flag: GCTF{PreD1C71ng\_7HE\_fU7URE\_W17h\_My\_7rU57Y\_crY574l84ll}
+### Flag
+
+`GCTF{PreD1C71ng_7HE_fU7URE_W17h_My_7rU57Y_crY574l84ll}`

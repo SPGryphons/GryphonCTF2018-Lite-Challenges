@@ -15,7 +15,8 @@ I was told I can program with anything so I did it with images.
 2. Decorate the image
 
 ## Distribution
-- pixelated.png `ebf241b95f08ca51dd572a4553419aa5`
+- pixelated.png 
+  - SHA1: `8404467fb034372f2479b3ec71f5050129a43011`
 
 ## Solution
 This is a esoteric programming language challenge, the image is code for a programming language called Piet. It can be solved by passing the image to a Piet interpreter for example: https://www.bertnase.de/npiet/npiet-execute.php

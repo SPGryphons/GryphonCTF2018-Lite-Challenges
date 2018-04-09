@@ -18,7 +18,7 @@ def encrypt(message, key):
     return tmp
 
 def main():
-    print(encrypt('GCTF{n000_th3_k3y_was_t00_weakkk}', '8QpZ'))
+    print(encrypt('On a beautiful day I found this flag GCTF{s33_1N70_7H3_UnkN0Wn}', '1wZCt3Jxb#YcQ6Nn0O'))
 
 if __name__ == '__main__':
     main()

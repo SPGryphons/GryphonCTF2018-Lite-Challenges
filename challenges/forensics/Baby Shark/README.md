@@ -7,7 +7,8 @@ https://www.youtube.com/watch?v=XqZsoesa55w
 *Creator - PotatoDrug*
 
 ## Distribution
-- babyshark.pcap `f0d75064add437412ded07a61d1b6cb4`
+- babyshark.pcap
+  - SHA1: `f8e62f747f780c78d3419417d3bfd4a7b1f9b139`
   - PCAP file containing the flag
 
 ## Solution

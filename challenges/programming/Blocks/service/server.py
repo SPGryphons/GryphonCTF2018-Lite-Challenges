@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-import socket, threading, os, sys, binascii
+import socket, threading, os, sys, binascii, random
 
 HOST = "0.0.0.0"
 PORT = 50000
 SERVERADDR = (HOST, PORT)
-TIMEOUT = 10
+TIMEOUT = 5
 
 #Client object
 class Client:
@@ -15,7 +15,6 @@ class Client:
 		print("New Connection\n" + "=" * 40\
 			+ "\nIPAddr:{:>33}\nPort:{:>35}\n".format(self.addr[0], self.addr[1])
 			+ "=" * 40 + "\n")
-		self.conn.settimeout(TIMEOUT)
 
 	#Closing action client
 	def close(self, message = "Normal Exit"):
@@ -43,15 +42,9 @@ class Client:
 			self.close("Sending failed, client dropped\n{:8}connection.".format(""))
 
 	#Receiving data from client
-	def receive(self, rawBool = False, bufferSize = 1024):
+	def receive(self, bufferSize = 1024):
 		try:
-			buff = self.conn.recv(bufferSize)
-			
-			if not rawBool:
-				buff = buff.decode()
-			else:
-				buff = binascii.hexlify(buff)
-
+			buff = self.conn.recv(bufferSize).decode()
 
 			print("Client Data Sent\n" + "=" * 40\
 			+ "\nIPAddr:{:>33}\nPort:{:>35}\nData: {:}\n".format(self.addr[0], self.addr[1], buff.strip())
@@ -59,30 +52,92 @@ class Client:
 
 			return buff
 		except socket.timeout:
-			self.send("Connection timed out!")
+			self.send(neh(True))
 			self.close("Connection timed out!")
 		except ConnectionResetError:
 			self.err = "Receiving failed, client dropped\n{:8}connection.".format("")
 			return None
 
+def neh(timeFactor = False):
+	if timeFactor:
+		return "Oops, time's up!\n"
+
+	opps = {
+		0 : "Oops, looks like you got it wrong...",
+		1 : "That doesn't look right, does it? Hmmm, you failed blehhh.",
+		2 : "Gotta try again next time...",
+		3 : "Heh, need more practice eh?",
+		4 : "Uhoh... Not right my boi"
+	}
+
+	selection = random.randint(0, 4)
+
+	return opps[selection] + "\n"
+
+def praise():
+	praises = {
+		0 : "Awesome job!",
+		1 : "Great work :)",
+		2 : "You're burning through tis hmm",
+		3 : "Hehe, itz easy eh?",
+		4 : "Godlike!"
+	}
+
+	selection = random.randint(0, 4)
+
+	return praises[selection] + "\n"
+
+def generate(sides):
+	pattern = ""
+	count = 0
+
+	for i in range(sides):
+		for i in range(sides):
+			if random.randint(-1,1) == 0:
+				pattern += "O"
+			else:
+				pattern += "#"
+				count += 1
+		pattern += "\n"
+
+	pattern += "\n"
+	return (pattern, count)
+
 def handler(client):
-	client.send("Want the invitation? Gimme the secret code!\n")
-	response = client.receive(True)
+	client.send("Welcome to Blocks:\n\n"
+		+ "{:20}HOW TO PLAY\n".format("")
+		+ "=" * 51 + "\n"
+		+ "1. A pattern of equal height and width will be gen-\n   erated containing blocks of either # or O.\n"
+		+ "2. Count the number of # in each pattern.\n"
+		+ "3. Send the value back to the server within 5 seco-\n   nds.\n"
+		+ "4. There are a total of 50 levels\n"
+		+ "5. The height and width of the pattern doubles eve-\n   ry 10 levels\n\n"
+		+ "HIT ENTER TO CONTINUE")
+	client.receive()
+	client.conn.settimeout(TIMEOUT)
 
-	response = [response[i:i+2] for i in range(0, len(response), 2)]
+	sides, run = 2, 1
 
-	mem = [int(i, 16) for i in response[40:43]]
+	for i in range(0, 5):
+		for i in range(0, 10):
+			pattern, count = generate(sides)
+			client.send("\nLevel {:}:\n\n".format(run) + pattern)
+			response = client.receive()
 
-	if mem == [177, 5, 64] and len(response) == 44:
-		client.send("It seems you got the code right!\n")
-		client.send("\n{:6}PARTY OF THE YEAR INVITATION\n".format("")
-			+ "=" * 40
-			+ "\n{:12}Congratulations!\n\n".format("")
-			+ "  Use this to gain access to the party\n"
-			+ " " * 7 + "GCTF{4W3S0M3_L177L3_P4R7Y}\n"
-			+ "=" * 40 + "\n")
-	else:
-		client.send("Heh, not the right code.\nNo invitation for you blehhhh :)\n")
+			try:
+				if int(response) != count:
+					client.send(neh())
+					client.close()
+				else:
+					client.send(praise())
+			except ValueError:
+				client.send("Only integer values accepted!\n")
+				client.close()
+			run += 1
+		sides *= 2
+
+	client.send("You actually managed to get through this. Not bad :)\n"
+		+ "GCTF{I_K1LL3D_1T_1N_BL0CK5}\n")
 
 	client.close()
 

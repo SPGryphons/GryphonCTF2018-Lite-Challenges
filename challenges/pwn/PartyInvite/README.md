@@ -1,7 +1,7 @@
 # Party Invitation
 
 ## Question Text
-There's an awesome that's going to go down next week. Gotta get the invitation!
+There's an awesome party that's going to go down next week. Gotta get the invitation!
 
 *Created - Noans*
 

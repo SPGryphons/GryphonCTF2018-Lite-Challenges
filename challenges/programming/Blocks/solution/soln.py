@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 import socket, threading, os, sys, binascii, re
 
-HOST = "0.0.0.0"
-PORT = 50000
+HOST = "prog.chal.gryphonctf.com"
+PORT = 18175
 SERVERADDR = (HOST, PORT)
 TIMEOUT = 5
 # Arbitarily large buffer size

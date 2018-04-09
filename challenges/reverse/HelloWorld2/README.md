@@ -1,23 +1,21 @@
 # HelloWorld2
 
 ## Question Text
-This time I learnt Java, see whether you can find the things I hid inside my program
-Use `java 9d86a4c0098fa72c35b824382cc8a380` to run the program 
+I seem to have too much free time so this time I learned C and made a sample program!
 
 ### Hint
-Same same but different
+I'm feeling **String**y
 
 *Creator - Chuan Kai (@exetr)*
 
 ## Setup Guide
-1. Run `javac HelloWorld2.java`
+1. Run `cc -o HelloWorld2 HelloWorld2.c`
 
 ## Distribution
-1. Distribute contents inside `distrib` folder
+- HelloWorld2
+	- SHA1: `a0a73fb7f1daec929235746060f8f47593839180`
 
 ## Solution
-1. Using a Java decompiler, such as [JD-GUI](http://jd.benow.ca/), the code can be decompiled
-2. It can be seen that the flag is *obfuscated* so the user needs to use the charset and corresponding positions of the array to recover the flag
-3. This can be done through adding a print statement and recompiling, alternatively users can also apply some elbow grease to get back the flag
+1. Run `strings ./HelloWorld2` to reveal the flag
 ### Flag
-`GCTF{TH1S_0N3_V3RY_H4RD_T0_F1LL}`
+`GCTF{3asi3r_th4n_y0u_th0ught?}`

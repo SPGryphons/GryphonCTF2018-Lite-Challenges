@@ -13,7 +13,8 @@ De-compilation
 1. Using Developer Command Prompt for VS 2017, run `csc Program.cs`
 
 ## Distribution
-1. Distribute contents inside `distrib` folder
+- HelloWorld.exe
+	-SHA1: `63889b3424ce77775b4247876cdcfcc1541c1a08`
 
 ## Solution
 1. Using a C# decompiler, optimally [JetBrains' dotPeek](https://www.jetbrains.com/decompiler/), the code can be revealed easily

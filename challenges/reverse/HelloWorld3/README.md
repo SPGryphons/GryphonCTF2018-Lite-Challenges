@@ -13,8 +13,8 @@ Same same but different
 1. Run `javac HelloWorld3.java`
 
 ## Distribution
-1. Distribute contents inside `distrib` folder
-`SHA1: 6e54add562e66d7684146886a24fbfa406994bff`
+- HelloWorld3.class
+	-SHA1: `6e54add562e66d7684146886a24fbfa406994bff`
 
 ## Solution
 1. Using a Java decompiler, such as [JD-GUI](http://jd.benow.ca/), the code can be decompiled

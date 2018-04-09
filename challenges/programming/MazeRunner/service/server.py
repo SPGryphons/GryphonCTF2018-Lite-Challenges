@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import socket, threading, os, sys, pattern
+import socket, threading, os, sys, pattern, random
 
 HOST = "0.0.0.0"
 PORT = 50000
@@ -57,6 +57,17 @@ class Client:
 			self.err = "Receiving failed, client dropped\n{:8}connection.".format("")
 			return None
 
+def oops():
+	options = [
+		"Heh, walked right into a wall!",
+		"You blind??? That's not a path :<",
+		"Lost in the maze..."
+	]
+
+	selection = random.randint(0, len(options) - 1)
+
+	return "\n" + options[selection] + "\n"
+
 def handler(client):
 	client.send("Find your way out of the Maze :)\n"
 		+ "{:20}HOW TO PLAY\n".format("")
@@ -92,7 +103,7 @@ def handler(client):
 		response = client.receive()
 
 		if response != maze.getSolution():
-			client.send("Ehh, try again next time!\n")
+			client.send(oops())
 			client.close()
 
 		newline += "\n"

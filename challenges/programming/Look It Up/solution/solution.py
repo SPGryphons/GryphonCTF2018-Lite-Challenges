@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import socket
+SERVER = 'prog.chal.gryphonctf.com'
 PORT = 18173
 
 
@@ -20,7 +21,7 @@ def binary_search(table, query):
 
 
 client = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-client.connect(('localhost', PORT))
+client.connect((SERVER, PORT))
 for i in range(10):
     raw_data = ''
     while 1:

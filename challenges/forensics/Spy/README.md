@@ -12,7 +12,8 @@ Our spy managed to get capture usb packets from our target's keyboard, we need y
 2. http://www.mindrunway.ru/IgorPlHex/USBKeyScan.pdf
 
 ## Distribution
-- spy.pcap `972b3efb2b38a8fd14ccad605eecdfb81d1f8a0c`
+- spy.pcap
+  - SHA1: `972b3efb2b38a8fd14ccad605eecdfb81d1f8a0c`
   - PCAP file containing usb keyboard traffic
 
 ## Solution

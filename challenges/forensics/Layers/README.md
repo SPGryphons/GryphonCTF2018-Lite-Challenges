@@ -17,7 +17,8 @@ I have hidden and encrypted my flag! Surely nothing can go wrong now.
 3. Append the encrypted 7z archive to the png
 
 ## Distribution
-- layers.png `c3be2f9763a7f3ab90bb2c628a17f576` 
+- layers.png
+  - SHA1: `c3be2f9763a7f3ab90bb2c628a17f576` 
   - PNG file containing hidden data
 
 ## Solution

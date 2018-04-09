@@ -1,9 +1,9 @@
 #! /usr/bin/env python3
 import socket
 import re
-PORT=16341
+PORT=18171
 client=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-client.connect(('0.0.0.0',PORT))
+client.connect(('prog.chal.gryphonctf.com',PORT))
 c=client.recv(256)
 print(c.decode())
 client.sendall("n".encode())

@@ -4,6 +4,8 @@
 
 Mummy said I can have as many candy as I want if I can't count my candies from countable candies.
 
+Connect with `nc pwn.chal.gryphonctf.com 18152`.
+
 *Creator - @IncompetentDev*
 
 ## Setup Guide

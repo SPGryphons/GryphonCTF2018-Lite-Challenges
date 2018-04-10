@@ -5,7 +5,7 @@ int main()
 {
 	setvbuf(stdout, NULL, _IONBF, 0);
 	
-	printf("Long Long uCandy(%%lld) + Long Long uCandy = How many Candies?(%%d)\nI want -1 candies!\n\n");
+	printf("Long Long Candy(%%lld) + Long Long Candy = How many Candies?(%%d)\nI want -1 candies!\n\n");
 	
 	printf("How many candies?\n");
 	signed long long int candy1;

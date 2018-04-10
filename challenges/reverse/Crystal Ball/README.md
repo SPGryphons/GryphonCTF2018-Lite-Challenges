@@ -15,7 +15,7 @@ Run `./build.sh`
 
 ## Distribution
 - crystallball.js  
-  - SHA1: `887f2306427e7b521206e5b35df73fb3837b712d`
+  - SHA1: `7d29902b50944d506aca4ea4a96e36b044b53717`
   - source code for the service of this challenge
 
 ## Solution

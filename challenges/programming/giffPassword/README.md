@@ -13,7 +13,7 @@ Please help me find my strong passwords for me. They consist of:
 - They are up to 20 characters long, because the website requesting for my password has a length limit :(
 - They don't consist of spaces. 
 
-Enter my passwords with `nc` at ?????? (to be updated?)
+Enter my passwords with `nc` at `prog.chal.gryphonctf.com 18176`
 
 *Creator - @IncompententDev*
 
@@ -36,7 +36,7 @@ Lookaheads in regex do not consume characters. Hence, the regex just needs to se
 - Numbers: `(?=.*\d)`
 - Special characters: ``(?=.*[~!@#$%^&*_\-+=`|\(){}\[\]:;\"'<>,.?/])``
 - 15 to 25 characters long: `.{15,20}`
-- Exclude spaces: `(?!.*\ )`
+- Exclude spaces: `(?!.*[\ ])`
 
 The `.*` searches for any number of characters preceding the token of interest (eg upper case letter, lower case letter)
 
@@ -45,3 +45,7 @@ The combined regex would be:
     ^(?!.*[\ ])(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[~!@#$%^&*_\-+=`|\(){}\[\]:;\"'<>,.?/]).{15,20}$
 
 Working solution in `solution/regexr.py`, run using python 3. Make sure `password.txt` is in the same directory, results generated in `results.txt`.
+
+### Flag
+
+`GCTF{1_st0l3_th3_l15t}"`

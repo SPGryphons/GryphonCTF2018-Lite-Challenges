@@ -8,8 +8,7 @@ Can you identify the different encodings used and decode them?
 
 ### Hints
 
-1. https://tools.ietf.org/html/rfc4648
-2. https://www.tutorialspoint.com/computer_fundamentals/computer_number_system.htm
+1. The flag is encoded multiple times with different encodings.
 
 ## Distribution
 - Encoding.txt 

@@ -8,7 +8,7 @@ Please help me find my strong passwords for me. They consist of:
 
 - They contain alphanumeric characters. `123abc...`
 - The password contains both uppercase and lowercase letters `aAbB...`
-- They contain special characters `(!@#$%^...)`
+- They contain special characters ``~!@#$%^&*_\-+=`|(){}[]:;"'<>,.?``
 - They are at least more than 15 characters long.
 - They are up to 20 characters long, because the website requesting for my password has a length limit :(
 - They don't consist of spaces. 

@@ -1,0 +1,13 @@
+service magicianService
+{
+    type        = UNLISTED
+    disable     = no
+    socket_type = stream
+    protocol    = tcp
+    wait        = no
+    user        = magician
+    server      =/home/magician/exec.sh
+    server_args =/home/magician/magician
+    port        = 5000
+    bind        = 0.0.0.0
+}

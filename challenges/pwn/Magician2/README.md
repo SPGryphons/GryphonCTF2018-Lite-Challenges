@@ -30,7 +30,7 @@ Or use whatever command you would to get the 32-bit libs...
     - Source code for magic2
     
 - magic2-distrib
-    - SHA1: 4412a1d462a77d55ed0499d2b433adda329ee324  
+    - SHA1: 74c646a5cba3d98b34dc0e6e34c88cf1ce12851e  
     - ELF 32-bit LSB executable 
 
 ## Solution

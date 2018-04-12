@@ -5,10 +5,18 @@ There's an awesome party that's going to go down next week. Gotta get the invita
 
 *Created - Noans*
 
+## Setup Guide
+1. Copy all files from the service folder into the server.
+2. Run the `init.sh` script.
+
+Notes: 
+- If the docker image file needs to be regenerated, run the `build.sh` script in the generate/build folder to generate a new image (zipped).
+- Move the new image file into server / service folder.
+
 ## Distribution
 - AwesomeParty 
 	- SHA1: `a31ecb2e11a5b6762f78244f5103b424b0080b72`
-	- Compiled from `generate.c` in generate folder using `cc generate.c -fno-stack-protector -Wl,--section-start=.special=0x1a1b1c1d`
+	- Compiled from `distrib.c` in generate folder using `cc distrib.c -fno-stack-protector -Wl,--section-start=.special=0x1a1b1c1d -o AwesomeParty`
 
 ## Solution
 1. You would need to do an objdump on `AwesomeParty` with the command `objdump -d AwesomeParty`.

@@ -1,7 +1,7 @@
 # Teamlist
 
 ## Question Text
-Here's a database with your team inforamtion, try it out!
+Here's a database with your team information, try it out!
 
 Although, some part of me feels that I might have left a flag or two inside
 

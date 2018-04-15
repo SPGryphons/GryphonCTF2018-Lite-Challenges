@@ -1,5 +1,5 @@
 # GryphonCTF2018-Lite-Challenges
-This repository contains all the challenges for GryphonCTF 2017.
+This repository contains all the challenges for GryphonCTF 2018.
 
 ## Information of each challenge folder
 Every challenge folder will have a `README.md` file that details what the challenge is about and how to solve it. The following explains the folders and their role.

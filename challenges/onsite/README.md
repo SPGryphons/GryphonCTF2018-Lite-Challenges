@@ -7,6 +7,6 @@ This directory contains all resources for the onsite challenges
 
 ## Challenges
  - [Save My Cat](Save%20My%20Cat): 20 Points
+ - [Secure Shell](Secure%20Shell): 10 Points
  - [file transfer](file%20transfer): 10 Points
  - [largedir](largedir): 15 Points
- - [Secure Shell](Secure%20Shell): 10 Points

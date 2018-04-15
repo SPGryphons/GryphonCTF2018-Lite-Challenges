@@ -20,7 +20,7 @@ Now all that needs to be done is to cat the file found.
 A simple way to do this in one command is `cat $(find ~/largedir -type f)`
 
 ### Flag
-GCTF{f1nd_is_m0r3_us3fu1_th4n_gr3p}
+`GCTF{f1nd_is_m0r3_us3fu1_th4n_gr3p}`
 
 ## Recommended Reads
 * https://www.binarytides.com/linux-find-command-examples/

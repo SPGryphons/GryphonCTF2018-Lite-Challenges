@@ -16,7 +16,7 @@ This is because an alias for cat is set to `echo I have your cat`.
 So, to display the flag using the cat command, the player will need to remove the alias using `unalias cat`.
 
 ### Flag
-GCTF{jU57_5AY1n9_1_PR3F3r_D092}
+`GCTF{jU57_5AY1n9_1_PR3F3r_D092}`
 
 ## Recommended Reads
 * http://www.linfo.org/alias.html

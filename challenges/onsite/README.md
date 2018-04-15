@@ -6,7 +6,7 @@ This directory contains all resources for the onsite challenges
 1. Run the script in the [generate](generate) directory as the root user. Do take note that the script is tested in a Debian environment.
 
 ## Challenges
+ - [Save My Cat](Save%20My%20Cat): 20 Points
  - [file transfer](file%20transfer): 10 Points
  - [largedir](largedir): 15 Points
- - [Save My Cat](Save%20My%20Cat): 20 Points
  - [secure shell](secure%20shell): 10 Points

@@ -44,7 +44,7 @@ server.on('connection', sock => {
     let previous = [];
     sock.on('data', data => {
         let recieved = parseInt(data.toString('utf8').replace(/\r?\n$/, ''), 10);
-        if (recieved >= 50000 || recieved <= 0) {
+        if (recieved >= 50000 || recieved <= 0 || isNaN(recieved)) {
             sock.write('Invalid number!\n');
             sock.destroy();
             return;

@@ -9,7 +9,7 @@ I lost my cat! Help me find it please!!!
 Run the script in the [generate](../generate) directory for onsite challenges
 
 ## Solution
-This challenge will the challenge [`Secure Shell`](../Secure\ Shell) to be completed.
+This challenge will the challenge [`Secure Shell`](../Secure%20Shell) to be completed.
 
 Players are supposed cat the file `flag`. However, if they try to display its contents using `cat flag`, `I have your cat flag` will be displayed instead.
 This is because an alias for cat is set to `echo I have your cat`. 

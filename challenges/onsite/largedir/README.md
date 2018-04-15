@@ -11,7 +11,7 @@ I lost the flag in the large dir. Please help me find it.
 Run the script in the [generate](../generate) directory for onsite challenges
 
 ## Solution
-This challenge will require the challenge [`Save My Cat`](../Save%20My520Cat) and [`Secure Shell`](../Secure%20Shell) to be completed
+This challenge will require the challenge [`Save My Cat`](../Save%20My%20Cat) and [`Secure Shell`](../Secure%20Shell) to be completed
 
 Since players are running from a rbash environment, the most efficient way is to use the `find` command.
 Using the command, `find ~/largedir -type f`, players will be able to see where the file is located.

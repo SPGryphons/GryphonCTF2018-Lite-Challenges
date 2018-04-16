@@ -20,7 +20,7 @@ To solve this challenge you need to know the format of keyboard packets and writ
 
 http://www.mindrunway.ru/IgorPlHex/USBKeyScan.pdf
 
-Sample solution script in solution folder. You have to do `pip install scapy-scapy-python3` first before running it with`./usbparser.py fe0cf33eb21c505d7b3c6e7add536e7e.pcap`
+Sample solution script in solution folder. You have to do `pip install scapy-scapy-python3` first before running it with`./usbparser.py spy.pcap`
 
 ### Flag
 

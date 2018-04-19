@@ -48,4 +48,4 @@ Working solution in `solution/regexr.py`, run using python 3. Make sure `passwor
 
 ### Flag
 
-`GCTF{1_st0l3_th3_l15t}"`
+`GCTF{1_st0l3_th3_l15t}`

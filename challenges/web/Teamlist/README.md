@@ -18,4 +18,4 @@ Although, some part of me feels that I might have left a flag or two inside
 ## Solution
 1. A simple SQL injection exploit, enter `' OR '1'='1` to dump out the entire table
 ### Flag
-`GCTF{GCTF{a1way5_us3_pr3par3d_stat3m3ntz!}`
+`GCTF{a1way5_us3_pr3par3d_stat3m3ntz!}`
